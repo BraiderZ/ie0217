@@ -1,0 +1,9 @@
+# Ignorar archivos PDF
+*.pdf
+
+# Ignorar ejecutables
+*.exe
+
+# Ignorar algunos otros tipos de archivos
+*.log
+*.bak
