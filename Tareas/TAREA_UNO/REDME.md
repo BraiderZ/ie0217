@@ -60,3 +60,35 @@
 
 17. **Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qué valor o dirección apunta inicialmente? Describa cómo sería la forma de acceder a todos los datos de ese arreglo mediante el puntero.**
     - Este apunto al primer valor del arreglo, además, no es necesario ser específicos a la hora de inicializar el puntero, con solo el nombre de la variable es suficiente. En caso de querer acceder al resto de valores del arreglo, simplemente debemos utilizar el símbolo `+` seguido de un número entero. Esto se debe a que una vez hayamos asignado el arreglo al puntero, este sabe los tipos de datos que se encuentran en el arreglo y cuantos bytes posee cada valor.
+
+18. **Explique para qué son empleados los punteros dobles en C++. Proporcione ejemplos de situaciones en las que los punteros dobles son necesarios o beneficiosos.**
+
+   - Son empleados para acceder tanto a el valor de la variable original por medio de un puntero simple, acceder a la memoria asignada por medio de un puntero simple. Un caso normal para su uso es el manejo matrices bidimensionales y facilicat la creación de videojuegos como lo son "gato" y "ajedrez" (en este último inclusive se utilizan punteros triples). 
+
+19. **¿Cuál es la diferencia entre un break y un continue en los bucles de C++?**
+
+   - El `break` es utilizado en el caso de que queramos terminar el bucle por completo y continunar con el resto del código, mientras que `continue` se utiliza para avanzar al siguiente valor del bucle (omite un valor del bucle).
+
+20. **¿Para qué se utiliza la directiva #ifndef?**
+
+   - Se utiliza al inicio de un archivo `.hpp`. Su objetivo es verificar que si en otro archivo no se han definido los headers de un programa, proceder a definirlo. Esto es una buena práctica, ya que, pueden haber casos donde el varios archivos con el mismo objetivo fueron llamados al mismo tiempo y si no se posee esta directiva, definirá más aspectos de los esperados.
+
+21. **¿Qué es el puntero this en C++?**
+
+   - Cuando tenemos una clase y un objeto invoca un método en específico, el puntero this se encarga de apuntar a la dirección de ese objeto. [4]
+
+22. **¿Qué es un puntero nullptr?**
+
+   - Existen caso en los que se inicializa un puntero de manera nula (no apunta a ningún valor). Para evitar ambigüedades que podrían causar definir al puntero como un 0 o un `null`, se creó `nullptr`.[4]
+
+23. **¿Cuál es la diferencia entre un arreglo y una lista en C++?**
+
+   - Su diferencia recae en los tipos de datos que posee. Un arreglo solo posee datos de un tamaño fijos, mientras que, una lista puede poseer cualquier tipo de dato en su interior. Además, las listas utilizan memoría dinámica.
+
+24. **¿Qué es una función prototipo?**
+
+   - Es una aviso previo al compilador sobre una fucnión a la que creará más a futuro. Esto es muy utilizado para darle orden al programa, donde los prototipos de las funciones se encontrarán en los `.hpp`.
+
+25. **¿Investigue qué es un memory leak?**
+
+   - A diferencia de otras partes de la memoría, cuando el programador decide asignar memoria dinámica (como crear listas), esta no se libera de manera automática, es responsabilidad del usuario liberarla. En el caso de que el programa no libere esta memoria adecuadamente, se dará una pérdida progresiva de memoria del sistema. Este problema es conocido como memory leak y existen varias maneras de verificar si un programa tiene este problema. 
