@@ -4,12 +4,12 @@
 #include <iostream>
 
 void mostrarMenu();
-void procesarOpcion(int& nivel_dificultad, int& cantidad_intentos, int intervalo_valores[]);
-void elegirDificulltad();
-void nivelFacil();
-void nivelDificil();
-void intervaloNumeros();
-void numeroSecreto();
+void procesarOpcion(int& nivel_dificultad, int& cantidad_intentos, int intervalo_valores[], int& numero_secreto);
+void elegirDificultad(int& nivel_dificultad);
+void nivelFacil(int& cantidad_intentos, int intervalo_valores[], int& numero_secreto);
+void nivelDificil(int& cantidad_intentos, int intervalo_valores[], int& numero_secreto);
+void elegirIntervaloNumeros(int& cantidad_intentos, int intervalo_valores[]);
+void elegirNumeroSecreto(int intervalo_valores[], int& numero_secreto);
 
 
 

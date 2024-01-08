@@ -11,14 +11,56 @@ void mostrarMenu(){
     std::cout <<  "4. Salir del juego\n";
 }
 
-void procesarOpcion(int& nivel_dificultad, int& cantidad_intentos, int intervalo_valores[]){
-    std::cout <<  "\nNivel " << nivel_dificultad << std::endl;
-    std::cout <<  "Intentos " << cantidad_intentos << std:: endl;
-    std::cout <<  "Intervalo " << intervalo_valores[0] << "-" << intervalo_valores[1] << std::endl;
+void procesarOpcion(int& nivel_dificultad, int& cantidad_intentos, int intervalo_valores[], int& numero_secreto){
+    int opcion;
+    std::cout << "Ingrese una opcion: ";
+    std::cin >> opcion;
 
-    nivel_dificultad =  9;
-    cantidad_intentos = 10;
-    intervalo_valores[0] = 9;
-    intervalo_valores[1] = 100;
+    switch (opcion){
+        case 1:
+            std::cout << "Iniciando juego..." << std::endl;
+            elegirNumeroSecreto(intervalo_valores, numero_secreto);
+            if (nivel_dificultad == 1){
+                nivelFacil(cantidad_intentos, intervalo_valores, numero_secreto);
+            } else{
+                nivelDificil(cantidad_intentos, intervalo_valores, numero_secreto);
+            }
+            break;
+        case 2: 
+            elegirDificultad(nivel_dificultad);
+            break;
+        case 3:
+            elegirIntervaloNumeros(cantidad_intentos, intervalo_valores);
+            break;
+        case 4: 
+            std::cout << "Saliendo del juego...\n";
+            exit(0);
+        
+        default:
+            std::cout << "Opcion no valida. Intente de nuevo...\n";
+    }
+}
 
+void elegirDificultad(int& nivel_dificultad){
+    int nueva_dificultad;
+
+    std::cout <<  "\nNiveles disponibles\n";
+    std::cout <<  "1. Nivel facil\n";
+    std::cout <<  "2. Nivel dificil\n";
+    std::cout << "Elige una dificultad: ";
+    std::cin >> nueva_dificultad;
+
+    switch (nueva_dificultad){
+        case 1:
+            nivel_dificultad = nueva_dificultad;
+            std::cout <<  "Se ha cambiado a dificultad a facil";
+            break;
+        case 2: 
+            nivel_dificultad = nueva_dificultad;
+            std::cout <<  "Se ha cambiado a dificultad a dificil";
+            break;
+
+        default:
+            std::cout << "Opcion no valida. Intente de nuevo...\n";
+    }
 }
