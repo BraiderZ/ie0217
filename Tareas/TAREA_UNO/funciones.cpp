@@ -61,6 +61,17 @@ void elegirDificultad(int& nivel_dificultad){
             break;
 
         default:
-            std::cout << "Opcion no valida. Intente de nuevo...\n";
+            std::cout << "Opcion no valida.\n";
     }
+}
+
+void elegirIntervaloNumeros(int& cantidad_intentos, int intervalo_valores[]){
+
+    std::cout << "Elige el valor menor valor del invervalo: ";
+    std::cin >> intervalo_valores[0];
+    std::cout << "Elige el valor menor valor del invervalo: ";
+    std::cin >> intervalo_valores[1];
+
+    cantidad_intentos = (intervalo_valores[1] - intervalo_valores[0]) / 3;
+
 }
