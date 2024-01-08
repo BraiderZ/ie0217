@@ -75,3 +75,12 @@ void elegirIntervaloNumeros(int& cantidad_intentos, int intervalo_valores[]){
     cantidad_intentos = (intervalo_valores[1] - intervalo_valores[0]) / 3;
 
 }
+
+void elegirNumeroSecreto(int intervalo_valores[], int& numero_secreto){
+    std::random_device random_device;
+    std::mt19937 generador_random(random_device());
+    std::uniform_int_distribution<int> intervalo(intervalo_valores[0], intervalo_valores[1]);
+
+    numero_secreto = intervalo(generador_random);
+
+}
