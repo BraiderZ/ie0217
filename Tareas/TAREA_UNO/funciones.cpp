@@ -1,7 +1,9 @@
 #include "funciones.hpp"
 #include <string>
 #include <iostream>
-#include <random>
+#include <cstdlib>
+#include <ctime>
+
 
 void mostrarMenu(){
     std::cout << "\n-----¡Adivina el entero!-----\n";
@@ -77,10 +79,7 @@ void elegirIntervaloNumeros(int& cantidad_intentos, int intervalo_valores[]){
 }
 
 void elegirNumeroSecreto(int intervalo_valores[], int& numero_secreto){
-    std::random_device random_device;
-    std::mt19937 generador_random(random_device());
-    std::uniform_int_distribution<int> intervalo(intervalo_valores[0], intervalo_valores[1]);
+    std::srand(static_cast<unsigned>(std::time(nullptr)));
 
-    numero_secreto = intervalo(generador_random);
-
+    numero_secreto = std::rand() % (intervalo_valores[1] - intervalo_valores[0] + 1) + intervalo_valores[0];
 }
