@@ -229,7 +229,6 @@ void nivelDificil(int& cantidad_intentos, int intervalo_valores[], int& numero_s
     int hirviendo = 0.5*ajuste_dificultad_dificil + 0.5;
     int caliente = 1*ajuste_dificultad_dificil + 0.5;
     int frio = 1.5*ajuste_dificultad_dificil + 0.5;
-    int congelado = 2*ajuste_dificultad_dificil + 0.5;
 
     // Se realiza un for con la cantidad de intentos posibles.
     for (int i = 0; i < cantidad_intentos; ++i){
