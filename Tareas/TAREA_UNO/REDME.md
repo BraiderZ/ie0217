@@ -129,3 +129,28 @@
 7. **¿Para qué se utiliza .PHONY en un Makefile?**
 
    - Existen casos en que los objetivos no representan ningún archivo como es el caso de `clean`, que sin importar esto, siempre se ejecutará. Para evitar que a la hora de compilar busque alchivos relacionados a este objetivo, se coloca `.PHONY`.
+
+# Convención de nombres
+
+| Notación                 | Ejemplo                    | Descripción                                      |
+|--------------------------|----------------------------|--------------------------------------------------|
+| Camel Case               | `miVariable`               | Palabras consecutivas, con la primera en minúscula y las siguientes en mayúscula.                                   |
+| Pascal Case              | `MiVariable`               | Similar a Camel Case, pero con la primera letra de cada palabra en mayúscula.                                      |
+| Snake Case               | `mi_variable`              | Palabras separadas por guiones bajos (underscore) en minúsculas.                                                  |
+| Kebab Case               | `mi-variable`              | Palabras separadas por guiones (-) en minúsculas.                                                               |
+| Upper Snake Case         | `MI_VARIABLE`              | Todas las letras en mayúsculas, palabras separadas por guiones bajos.                                              |
+| Screaming Kebab Case     | `MI-VARIABLE`              | Todas las letras en mayúsculas, palabras separadas por guiones.                                                    |
+| Hungarian Notation       | `intNumEstudiantes`        | Prefijo indicando el tipo de variable seguido de un nombre descriptivo (no recomendado en lenguajes modernos).    |
+| Camel Case con Prefijo   | `strNombreUsuario`         | Camel Case con prefijo indicando el tipo de variable.                                                            |
+| Notación Húngara (Hungarian Notation) | `bolActivo`      | Prefijo indicando el tipo de variable seguido de un nombre descriptivo (no recomendado en lenguajes modernos).    |
+
+En general, la notación para cada tipo de variable varía dependiendo del equipo de trabajo, proyecto y lenguaje de programación utilizado. Lo más común para el caso de C++ es utilizar CamelCase para funciones y clases y, Snake Case para variables y atributos. [5]
+
+# Blibiografía
+
+1. NewCode, Diferencias entre Lenguajes Compilados y Lenguajes Interpretados. [Youtube](https://www.youtube.com/watch?v=pQCAk6-lH-E).
+2. Julio Echeverri, La Clase String y sus Métodos más Importantes en C++
+. [Julio Echeverri](https://julioecheverri.wordpress.com/2014/07/23/el-tipo-string-y-sus-metodos-mas-importantes-en-c/).
+3. Pointer declaration. [cppreference](https://en.cppreference.com/w/cpp/language/pointer#Pointers_to_functions).
+4. Microsoft C++, C, and Assembler documentation. [Microsoft](https://learn.microsoft.com/en-us/cpp/?view=msvc-170).
+5. Juan José, Convenciones de nombres. [Juan José++](https://spjuanjoc.github.io/principiante/convenciones-de-nombres/).

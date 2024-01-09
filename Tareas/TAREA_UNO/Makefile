@@ -7,8 +7,11 @@ CXX = g++
 # Opciones de compilación 
 CXXFLAGS = -Wall -std=c++11
 
-# Lista de archivos fuentes
-SOURCES = main.cpp funciones.cpp
+# Carpeta de archivos fuente
+SRCDIR = src
+
+# Lista de archivos fuente
+SOURCES = $(wildcard $(SRCDIR)/*.cpp)
 
 # Lista de archivos objeto generados a partir de los archivos fuente
 OBJECTS = $(SOURCES:.cpp=.exe)
@@ -31,4 +34,5 @@ all: build run
 # Regla para limpiar los archivos generados 
 .PHONY: clean
 clean:
-	del $(TARGET) $(OBJECTS)
+	del $(TARGET)
+	del $(SRCDIR)\*.exe
