@@ -92,3 +92,40 @@
 25. **¿Investigue qué es un memory leak?**
 
    - A diferencia de otras partes de la memoría, cuando el programador decide asignar memoria dinámica (como crear listas), esta no se libera de manera automática, es responsabilidad del usuario liberarla. En el caso de que el programa no libere esta memoria adecuadamente, se dará una pérdida progresiva de memoria del sistema. Este problema es conocido como memory leak y existen varias maneras de verificar si un programa tiene este problema. 
+
+# Parte 2 (Automatización - Makefile)
+
+## Parte Teórica
+
+1. **¿Qué suelen contener las variables CC, CFLAGS, CXXFLAGS y LDFLAGS en un makefile?**
+
+   - `CC`: se especifíca el compilador utilizado para el programa.
+   - `CFLAGS` y `CXXFLAGS` contienen banderas de compilación para C y C++, respectivamente. Estas banderas se encargan de controlar el comportamiento durante la compilación. 
+   - `LDFLAGS` contiene las banderas del enlazador. Mismo trabajo que las otras banderas pero relacionadas al enlazado.
+
+2. **¿De qué se compone una regla en un Makefile?**
+
+   - Posee un objetivo que le dará su nombre propio para su uso, prerequisitos o dependencias que pueden llegar a ser otras reglas y sus comando que serán las acciones a realizar por la regla.
+
+3. **Defina qué es un target y cómo se relaciona con sus prerequisitos.**
+
+   - Un target u objetivo es la función que se quiere crear dentro del makefile. 
+   - Algunos de estos targets, dependen de archivos o inclusive de otros objetivos. Para estos casos, al target se el agregan los prerequisitos para que estas dependencias se encuentren actualizadas una vez se ejecute la regla.
+
+4. **¿Para qué se utiliza la bandera -I, -c y -o del compilador gcc?**
+
+   - `-I`: en caso de necesitar un archivo de encabezado que no se encuentre en la ubicación actual, con esta bandera puedes especificar la ubicación. 
+   - `-c`: es utilizado para solo realizar una parte del proceso de compilación. En este caso se deja de lado el enlazado. Es util si queremos a la hora de realizar cambios en el programa, solo se necesite actulizar una parte de los archivos y no todos.
+   - `-o`: se utiliza para agregarle el nombre al archivo de salida.
+
+5. **¿Cómo se definen y se utilizan las variables en un Makefile? ¿Qué utilidad tienen?**
+
+   - Se definen con un formato parecido al de lenguajes de programación: `NOMBRE = valor`. En caso de querer utilizarse, se debe usar: `$(NOMBRE)`. Al igual que las variables en los lenguajes, definir variables ayuda a mejorar la lectura del Makefile y se promueve el reciclaje, ya que, en caso de modificar un aspecto guardado en una variable, tan solo se necesita cambiar su valor donde fue definida.
+
+6. **¿Qué utilidad tiene un @ en un Makefile?**
+
+   - Cuando se coloca al inicio de un comando, este se suprime en la salida, ya que, estos se imprimen a la hora de ejecutar una regla. Por ello, usar `@` puede ayudar a mejorar la limpieza de un Makefile
+
+7. **¿Para qué se utiliza .PHONY en un Makefile?**
+
+   - Existen casos en que los objetivos no representan ningún archivo como es el caso de `clean`, que sin importar esto, siempre se ejecutará. Para evitar que a la hora de compilar busque alchivos relacionados a este objetivo, se coloca `.PHONY`.
