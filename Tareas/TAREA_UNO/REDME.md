@@ -3,6 +3,54 @@
 ### Estudiante: Luis Brenes Campos - C21324
 ### Profesor: Rafael Esteban Badilla Alvarado
 
+# Instrucciones para ejecutar el programa "adivina.exe"
+
+Este programa "adivina.exe" es un juego simple desarrollado en C++ que permite al usuario adivinar un número secreto. A continuación, se proporcionan las instrucciones para compilar y ejecutar el programa:
+
+## Requisitos previos
+
+- Asegúrate de tener un entorno de desarrollo C++ instalado, como [MinGW](http://mingw.org/).
+- Clona o descarga el repositorio en tu máquina local.
+
+## Compilación
+
+1. Abre una terminal o un símbolo del sistema.
+2. Navega al directorio donde se encuentra el Makefile y los archivos fuente.
+3. Ejecuta el siguiente comando para compilar el programa:
+
+   ```bash
+   mingw32-make
+
+Con este comando se realizarán las ejecuciones básicas del programa.
+
+## Targets específicos
+
+### Compilar código y crear el archivo adivina.exe
+- Ejecuta el siguiente comando:
+
+   ```bash
+   mingw32-make build
+
+### Ejecutar el archivo adivina.exe
+- Ejecuta el siguiente comando:
+
+   ```bash
+   mingw32-make run
+
+### Compilar el código, crear el archivo y ejecutarlo
+- Ejecuta el siguiente comando:
+
+   ```bash
+   mingw32-make all
+
+### Eliminar archivos de ejecución
+- Ejecuta el siguiente comando:
+
+   ```bash
+   mingw32-make clean
+
+
+
 # Parte 1 (Introducción a C++)
 
 ## Parte Teórica
