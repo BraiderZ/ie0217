@@ -220,8 +220,6 @@ void nivelFacil(int& cantidad_intentos, int intervalo_valores[], int& numero_sec
  * Posee una fórmula lineal para definir los valores cercanos al número secreto.
  * @var frio
  * Posee una fórmula lineal para definir los valores lejanos al número secreto.
- * @var congelado
- * Posee una fórmula lineal para definir los valores más lejanos al número secreto.
  */
 void nivelDificil(int& cantidad_intentos, int intervalo_valores[], int& numero_secreto, int& ajuste_dificultad_dificil){
     int eleccion_usuario;
