@@ -1,9 +1,9 @@
-#include "MaterialLectura.hpp"
+#include "Libro.hpp"
 
 int main(){
-    MaterialLectura material("Titanic", "Del Toro", "Maxwell", "Accion", "Disponible", 100, 10000);
-    material.imprimirInformacion();
-    material.tamano();
-    
+    Libro* ptr_libro1 = new Libro("Game of Thrones", "George R. R. Martin", "Bantam", "Ciencia Ficcion", "Disponible", 583, 30000);
+    ptr_libro1 -> imprimirInformacion();
+    ptr_libro1 -> tamano();
+    delete ptr_libro1;
     return 0;
 }
