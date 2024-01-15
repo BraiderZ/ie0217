@@ -155,7 +155,7 @@ Con este comando se realizarán las ejecuciones básicas del programa.
 **14. Punteros Inteligentes (Smart Pointers):**
 **Explique el concepto de punteros inteligentes y proporcione ejemplos de su uso.**
 
-- Un puntero inteligente es una de las maneras más versátiles de controlar el uso de la memoria dinámica. Estos puntero cuando se les ha asignado otro puntero de una memoria dinámica, se encarga de que una vez salga de su alcance el valor, libere la memoria de manera automática. Inclusive, no es necesario indicarle de alguna manera cómo eliminar, ya que, por si solo conoce el proceso [2].
+- Un puntero inteligente es una de las maneras más versátiles de controlar el uso de la memoria dinámica. Estos puntero cuando se les ha asignado otro puntero de una memoria dinámica, se encarga de que una vez salga de su alcance el valor, libere la memoria de manera automática. Inclusive, no es necesario indicarle de alguna manera cómo eliminar, ya que, por si solo conoce el proceso [1].
 - Ejemplos de su uso:
 
       1. Cuando se necesite utilizar memoria dinámica y no se tenga un conocimiento claro de en qué momento se deba liberar la memoria.
@@ -174,23 +174,30 @@ Con este comando se realizarán las ejecuciones básicas del programa.
 **17. Bubble Sort:**
 **Explique el funcionamiento del algoritmo de ordenamiento "Bubble Sort". ¿Cuál es su complejidad temporal en el peor caso?**
 
-- Este algoritmos funciona recorriendo una lista de valores, comparando los valores adyacentes y cambiado su posición una si no se encuentran de la manera especificada. Este proceso de recorrer la lista lo realiza varias veces hasta no exista ningún cambios más. En el peor de los casos, la complejidad de este algortino es de O(n^2), o sea, potencial.
+- Este algoritmo funciona recorriendo una lista de valores, comparando los valores adyacentes y cambiado su posición una si no se encuentran de la manera especificada. Este proceso de recorrer la lista lo realiza varias veces hasta no exista ningún cambios más. En el peor de los casos, la complejidad de este algortino es de O(n^2), o sea, potencial.
 
 **18. QuickSort:**
 **Describa el algoritmo de ordenamiento "QuickSort". ¿Cuál es su ventaja principal sobre otros algoritmos de ordenamiento?**
 
+- QuickSort es un algoritmo basado en la premisa "divide y vencerás". Se trata de elegir un pivote, o sea, uno de los valores de la lista y coloca a su lado izquierdo los valores menores al pivote y del lado derecho, los mayores al pivote. Una vez realizado este proceso, se repite con los subgrupos que se vayan creando hasta acomodar toda la lista.
+- Su ventaja principal con respecto a otros algoritmos se debe a su eficiencia, ya que, aunque en el peor de los casos sigue siendo de O(n^2), este factor disminuye mucho en comparación al resto de algoritmos, siendo de un promedio de O(n*log n).
+
 **19. Diferencia entre Ordenamiento Estable e Inestable:**
 **¿Cuál es la diferencia entre un algoritmo de ordenamiento estable y uno inestable? Proporcione ejemplos de cada uno.**
+
+- La diferencia entre estos dos tipos algoritmos recae en su comportamiendo ante una lista que posea valores iguales. Un algoritmo estable, aún tiene valores iguales, mantendrá el orden de su aparición, lo que significa que el primero que se encontraba en la lista, siempre se ubicará de primero. Los algoritmos inestables por su parte, no toman en cuenta este detalle y cambian de manera aleatorio el lugar de los dos valores.
+- En general cualquier tipo de ordenamiento puede ser estable e inestable dependiendo de la condición que se le de. En general, un ejemplo de un algoritmo estable es el Bubble Sort y de inestable es el QuickSort. Por otro lado, un ejemplo prático puede estar a la hora de organizar perfiles de personas, donde si existen personas con el mismo nombre, un algoritmo inestable estaría cambiando cada vez los nombres iguales, afectando la eficiencia del programa.
 
 **20. Merge Sort:**
 **Hable sobre el algoritmo de ordenamiento "Merge Sort". ¿Cuál es su complejidad temporal y en qué situaciones es preferible su uso?**
 
+- Merge Sort es un algoritmo que al igual que QuickSort, usa la premisa de "Divide y vencerás". En este caso, el algoritmo separa en dos parte la lista de valores y los ordena como corresponde, así las veces que sea necesario hasta haber un solo valor. Finalmente, combina los resultados de cada parte, realizando nuevamente el ordenamiento.
+- Su complejidad temporal es de O(n*logn) en cualwuier caso y es por ello que su uso es preferible cuando se quiera un algoritmo que sea consistente [2]. 
 
 
 # Blibiografía
 
-1. 
-2. 
-3. 
-4. 
+1. Microsoft C++, C, and Assembler documentation. [Microsoft](https://learn.microsoft.com/en-us/cpp/?view=msvc-170).
+2. Chio Code, Merge Sort | Ordenamiento por mezcla. [Youtube](https://www.youtube.com/watch?v=ACFZn_xQcz8).
+
 
