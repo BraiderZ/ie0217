@@ -139,23 +139,42 @@ Con este comando se realizarán las ejecuciones básicas del programa.
 **11. Memoria Dinámica en C++:**
 **¿Qué es la memoria dinámica en C++ y cuándo se utiliza comúnmente?**
 
+- A la hora de crear un programa, cada uno de los valores definidos (inclusive las instrucciones) tiene su propio espacio en la memoria. Este espacio en general es fijo dependiendo del tipo de valor que sea y el papel que cumple. Sin embargo, existe una parte de la memoria que se conoce como memoria dinámica, la cual, no es utilizada por el programa de manera automática, sino que, el programador puede utilizar a su gusto. Su uso es común cuando queremos definir valores que cambian de tamaño con el tiempo, debido a la flexibilidad que proporciona la memoria dinámica conforme pasa el tiempo de ejecución del programa.
+
 **12. Diferencia entre `new` y `malloc` en C++:**
 **¿Cuándo debería utilizar uno sobre el otro?**
+
+- Aunque tanto `new` como `malloc` se encargan de darle al usuario memoria dinámica, poseen diferencias. En primera instancia, `new` crea un puntero del tipo de dato solicitado hacia la memoria reservada, mientras que `malloc`, siempre genera un puntero de tipo `void` y se necesita convertirlo al tipo de valor necesitado. En segunda instancia, `new` tan solo se necesita especificar el tipo de dato que va a ser utilizar en ese espacio, a `malloc` en cambio se le definen la cantidad de bytes que van a ser utilizados. Finalmente, se utiliza el comando `delete` para liberar memoria con `new` y para `malloc`, se utiliza `free`.
+- En general, ambos pueden ser utilizados en cuallquier caso. Sin embargo, para mayor facilidad se recomienda el uso de `new` debido a ser más agradable con el usuario, El caso principal en el que se prefiere utilizar `malloc`, es relacionado a si el código tiene que se compatible con código C, ya que, solo este de los dos puede serlo.  
 
 **13. Fuga de Memoria (Memory Leak):**
 **¿Qué es una fuga de memoria y cómo puede evitarse en programas en C++?**
 
+- Como se mencionó anteriormente, la memoria dinámica es controlada completamente por el usuario. Es por ello que, el es completamente responsable de liberar la memoria  una vez sea utilizada. En el caso de que esta memoria no se libere, poco a poco se irá acumulando hasta el punto en el que suceda una fuga de memoria. Estas fugas son capaces de obstruir el programa y evitar que funcione correctamente o includive no se ejecute del todo. Simplemente para evitar este problema, se debe liberar la memoria con los comando correspondientes y se pueden utilizar diferentes herramientas que nos advierten de los memory leaks para lograr arreglarlos ante de compilar el código.
+
 **14. Punteros Inteligentes (Smart Pointers):**
 **Explique el concepto de punteros inteligentes y proporcione ejemplos de su uso.**
 
+- Un puntero inteligente es una de las maneras más versátiles de controlar el uso de la memoria dinámica. Estos puntero cuando se les ha asignado otro puntero de una memoria dinámica, se encarga de que una vez salga de su alcance el valor, libere la memoria de manera automática. Inclusive, no es necesario indicarle de alguna manera cómo eliminar, ya que, por si solo conoce el proceso [2].
+- Ejemplos de su uso:
+
+      1. Cuando se necesite utilizar memoria dinámica y no se tenga un conocimiento claro de en qué momento se deba liberar la memoria.
+      2. Si en diferentes partes del código y de manera separada se realizaron tomas de memoria dinámica, el puntero inteligente es una buena opción para llevar el conteo de la memoria que se ha reservado y sea liberada de manera rápida.
+ 
 **15. Diferencia entre `delete` y `delete[]` en C++:**
 **¿En qué contexto se utilizaría cada uno?**
+
+- `delete` se utiliza cuando la memoria reservada fue un valor para un valor único, mientras que `delete[]`, es utilizado cuando la memoria reservada fue para un arreglo. El contexto de cuando se utiliza cada uno, depende del tipo de dato que se reservó en la memoria dinámica, ya que, si se utiliza el incorrecto, no surtirá efecto.
 
 **16. Algoritmo de Ordenamiento:**
 **¿Qué es un algoritmo de ordenamiento y por qué son importantes en programación?**
 
+- Un algoritmo de ordenamiento consiste en un tipo específico de lógica con la que toman un conjunto de valores y son acomodados para su posterior uso o eliminación. Estos algoritmos pueden ser de muchos tipos dependiendo de las peticiones y las necesidades del código. Su importancia recaer a la hora de mejorar la optimización de un programa, ya que, a diferencia de tener muchos valores ordenados sin ninguna logicos o acomodados de manera aleatoria, los algoritmos generan que el tiempo de búsqueda, obtención y eliminación de los valores entren dentro de un intervalo dado, por lo que, el programa correrá a una velocidad optima siempre. 
+
 **17. Bubble Sort:**
 **Explique el funcionamiento del algoritmo de ordenamiento "Bubble Sort". ¿Cuál es su complejidad temporal en el peor caso?**
+
+- Este algoritmos funciona recorriendo una lista de valores, comparando los valores adyacentes y cambiado su posición una si no se encuentran de la manera especificada. Este proceso de recorrer la lista lo realiza varias veces hasta no exista ningún cambios más. En el peor de los casos, la complejidad de este algortino es de O(n^2), o sea, potencial.
 
 **18. QuickSort:**
 **Describa el algoritmo de ordenamiento "QuickSort". ¿Cuál es su ventaja principal sobre otros algoritmos de ordenamiento?**
