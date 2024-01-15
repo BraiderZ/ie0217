@@ -24,6 +24,7 @@ void Libro::imprimirInformacion(){
     cout << "Titulo: " << titulo << endl;
     cout << "Autor: " << autor << endl;
     cout << "Genero: " << genero << endl;
+    cout << "Editorial: " << editorial << endl;
     cout << "Estado: " << estado << endl;
     cout << "Tamano: " << cantidad_hojas << " hojas." << endl;
     cout << "Precio: " << precio << " colones." << endl;

@@ -14,7 +14,7 @@ Noticia::Noticia(string titulo, string autor, string editorial, string genero, s
         cout << endl;
 
         
-        cout << "Nuevo libro guardado exitosamente" << endl; 
+        cout << "Nueva noticia guardado exitosamente" << endl; 
     }
 
 void Noticia::imprimirInformacion(){
@@ -24,6 +24,7 @@ void Noticia::imprimirInformacion(){
     cout << "Titulo: " << titulo << endl;
     cout << "Autor: " << autor << endl;
     cout << "Genero: " << genero << endl;
+    cout << "Editorial: " << editorial << endl;
     cout << "Estado: " << estado << endl;
     cout << "Tamano: " << cantidad_hojas << " hojas." << endl;
     cout << "Precio: " << precio << " colones." << endl;
