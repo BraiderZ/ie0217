@@ -90,20 +90,51 @@ Con este comando se realizarán las ejecuciones básicas del programa.
 **5. Abstracción:**
 **¿Cómo se relaciona la abstracción con la programación orientada a objetos? Proporciona ejemplos de cómo aplicar la abstracción en un contexto de programación.**
 
+- La abstracción se define como la característica principal del paradigma POO para plasmar objetos de la vida real dentro de la programación. Este proceso se logra por medio de los métodos y atributos que le definamos a la clase. Estos métodos y atributos se eligen al abstraernos de todos los detalles de pueden tener los objetos reales y solo concentrarnos en lo más importante.
+- Ejemplo del uso de la abstracción tenemos:
+
+      1. Si necesitamos representar a las personas que poseen un saldo dentro de una cuenta de banco, podemos crear una clase con los atrubutos y métodos más relevantes para el usuario. Entre atributos se pueden tener: nombre del usuario, id de la cuenta bancaria y saldo que posee en el banco. Para los métodos, se podrían tener: revisar los detalles de la cuenta, depositar dinero y extraer dinero.
+      2. En caso de crear una blibioteca de música, podemos tener atributos como: nombre de la canción, artista, género y duración. Mientras que, para métodos podemos crear: reproducir música y detener música.
+
 **6. Clases y Objetos:**
 **Diferencia entre una clase y un objeto en programación orientada a objetos. Proporciona un ejemplo de cada uno.**
+
+- Existe la confusión de que las clases y los objetos son lo mismo, lo cual, es erroneo. Las clases consisten en la bases que posee los atributos y métodos de un tipo de objetos en específico. En otras palabras, se encargan de crear el comportamiento que tendran los objetos. Los objetos por su parte, son instancias de las clases y representan una entidad capaz de comportarse según los designios de las clases a las que pertenezca.
+- Un ejemplo de esta diferencia es:
+
+      1. Si se busca crear perfiles para diferentes artistas, podemos crear una clase que funcione como la plantilla de su información con atributos como su nombre, edad, labor a la que se dedica y premios ganados a lo largo de su vida. En el momento de que un artista quiera incribirse y tener un perfil, se crea un objeto que poseerá las características definidas en la clase pero, con la información correspondiente al artista en cuestión.
 
 **7. Métodos Virtuales:**
 **Explica la importancia de los métodos virtuales en C++ y cómo se utilizan en la implementación de polimorfismo.**
 
+- Aveces cuando se crea una clase padre que heredará sus atributos y métodos a otras clases, se puede saber que ellas utilizarán un método pero que no es posible definirlo en el mismo. Para ello, la clase padre puede crear un método virtual, osea, crear un prototipo del método que, por medio del polimorfismo, las clases hijas se encargarán de modificar a su gusto. U detalle a tener en cuenta sobre las clases virtuales, esque un uso muy común es a la hora de crear punteros de una clase derivada, en donde, si se busca ingrear por medio del puntero a un método, buscará dentro de la clase hija, por lo que, resultada necesario el uso de este tipo de métodos.
+
 **8. Constructores y Destructores:**
 **¿Cuál es el propósito de un constructor y un destructor en una clase? Proporciona ejemplos de su uso.**
+
+- El contructor y el desctrutor son dos métodos escenciales a la hora de crear una clase y que cumplen un papel fundamental para el funcionamiento correcto del código. En primera instancia, el constructor es invocador a la hora de crear un objeto y se encarga de inicializarlo, dandole valor a sus atributos tanto de manera directa o por medio de parámetros, entre otras acciones posibles. En segunda instancia, el destructor se encarga de liberar el espacio a la hora de que un objeto deje de ser utilizado o en el momento en el que termina el programa.
+- Ejemplos del uso del construtor son:
+
+      1. Si se crea una cuenta que es parte de una clase, el constructor puede imprimir un mensaje sobre que el proceso fue exitoso.
+      2. En caso de crear una clase encargada de calcular diferentes datos de una figura geométrica, el constrcutor puede recibir como parámetros los las medidas y cantidad de lados de una figura.
+
+- Ejemplo del uso del desstrutor es:
+
+      1. Cuando un objeto posee memoria dinámica, es necesario crear un destructor que, a la hora de invocarlo, tengas las instrucciones necesarias para liberar la memoria y no existan Memory Leaks.
 
 **9. Sobrecarga de Operadores:**
 **Explica qué es la sobrecarga de operadores y proporciona un ejemplo de cómo se implementa en C++.**
 
+- Como se mencionó anteriormente, existe el polimorfismo de operador. En general, los operadores no reconocen el comportamiento que deben de tener con un tipo de dato creado por el usuario, ya que, en su interior pueden haber miles de atributos y métodos. Sobrecargar el operador es darle un significado a los operadores, según a la clase a la que se refiera. Esto puede ser muy util si se necesitan métodos fáciles de comprender por los programadores a la hora de que dos o más objetos de una misma clase interactuen entre ellos.
+- Un de la sobrecarga puede ser:
+
+      1. En un juego de batallas donde exista una clase que posea el daño que causa un objeto y la salud del mismo, se puede utilizar el método "-" para referirse a que un objeto le realizó daño a otro.
+ 
 **10. Templates:**
 **Describe el concepto de templates en C++. ¿En qué situaciones sería útil utilizar templates?**
+
+- Los templates son una valiosa herramienta que se encarga de crear funciones o clases por medio de una versión genérica de las mismas. Cuando se crea un template, en vez de colocar un tipo de variable, se coloca  la letra "T".  Esta letra significa que todos los parámetros que recibirán las funciones o clases, son del mismo tipo [1].
+- El uso más uitlo de los templates es a la hora de crear funciones o clases que, no nos interese tanto que las variables sean de un tipo en específico y más bien, que diferentes tipos de datos puedan usarlas sin tener problemas, ya que, generalemente solo es un tipo de dato el que se define para su uso. Ejemplo de ello, podría ser el crear una función o clase que se encarga de realizar un promedio entre ciertos número, o sea, no nos interesa si es un integer o un double, sino que, sin importar su tipo, se calcule el promedio.
 
 **11. Memoria Dinámica en C++:**
 **¿Qué es la memoria dinámica en C++ y cuándo se utiliza comúnmente?**
