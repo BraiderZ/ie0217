@@ -13,5 +13,16 @@ int main(){
     noticia1 -> imprimirInformacion();
     noticia1 -> tamano();
     delete noticia1;
+
+    Pelicula* pelicula1 = new Pelicula("Avengers", "Luis", "Accion", "Reservado", 100, 15000);
+    pelicula1 -> imprimirInformacion();
+    pelicula1 -> tamano();
+    delete pelicula1;
+
+    Podcast* podcast1 = new Podcast("El tiempo vuela", "Luis", "Informativo", "Disponible", 30, 5000);
+    podcast1 -> imprimirInformacion();
+    podcast1 -> tamano();
+    delete podcast1;
+
     return 0;
 }
