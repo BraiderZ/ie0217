@@ -1,11 +1,11 @@
-#include "Libro.hpp"
+#include "Noticia.hpp"
 
-Libro::Libro(string titulo, string autor, string editorial, string genero, string estado, int cantidad_hojas, int precio) 
+Noticia::Noticia(string titulo, string autor, string editorial, string genero, string estado, int cantidad_hojas, int precio) 
     : MaterialLectura(titulo, autor, editorial, genero, estado, cantidad_hojas, precio) {
         this->grupo = "Lectura";
-        this->tipo_material = "Libro";
+        this->tipo_material = "Noticia";
 
-        cout << "Agregue un resumen sobre el libro en cuestion: ";
+        cout << "Agregue un resumen sobre la noticia en cuestion: ";
         getline(cin, resumen);
         cout << endl;
 
@@ -17,7 +17,7 @@ Libro::Libro(string titulo, string autor, string editorial, string genero, strin
         cout << "Nuevo libro guardado exitosamente" << endl; 
     }
 
-void Libro::imprimirInformacion(){
+void Noticia::imprimirInformacion(){
     cout << "---Informacion sobre el material de entretenimiento---" << endl;
     cout << "Grupo al que pertenece: " << grupo << endl;
     cout << "Tipo de material: " << tipo_material << endl;
@@ -31,12 +31,12 @@ void Libro::imprimirInformacion(){
     cout << "Algunos materiales relacionados al libro son: " << material_relacionado << endl;
 }
 
-void Libro::tamano() {
-    if (cantidad_hojas <= 100){
-        cout << "El libro " << titulo << " es corto." << endl;  
-    } else if (cantidad_hojas > 100 && cantidad_hojas < 200){
-        cout << "El libro " << titulo << " es mediano." << endl;
+void Noticia::tamano() {
+    if (cantidad_hojas <= 5){
+        cout << "La noticia " << titulo << " es corta." << endl;  
+    } else if (cantidad_hojas > 5 && cantidad_hojas < 10){
+        cout << "La noticia " << titulo << " es mediana." << endl;
     } else {
-        cout << "El libro " << titulo << " es largo." << endl;
+        cout << "La noticia " << titulo << " es larga." << endl;
     }
 }
