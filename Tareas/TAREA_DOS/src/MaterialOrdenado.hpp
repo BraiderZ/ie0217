@@ -19,9 +19,8 @@ class MaterialOrdenado  {
         void eliminarMaterial(string titulo);
         void buscarMaterialPorTitulo(string titulo);
         void buscarMaterialesPorTipo(int tipo);
+        void buscarMaterialPorPrecio(int precio);
         ~MaterialOrdenado();
-
-    private:
         vector<Noticia*> materiales_noticia;
         vector<Libro*> materiales_libro;
         vector<Pelicula*> materiales_pelicula;

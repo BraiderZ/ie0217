@@ -88,6 +88,36 @@ void MaterialOrdenado::buscarMaterialPorTitulo(string titulo){
     cout << "Material no encontro ningun material de entretenimiento con el titulo: " << titulo << endl;
 }
 
+void MaterialOrdenado::buscarMaterialPorPrecio(int precio){
+    for (Noticia* material : materiales_noticia) {
+        if (material->obtenerPrecio() == precio) {
+            cout << "Precio: "<< material->obtenerPrecio() << " | Titulo: " << material->obtenerTitulo() << " | Tipo: " << material->obtenerTipo() << endl ;
+            return;
+        }
+    }
+
+    for (Libro* material : materiales_libro) {
+        if (material->obtenerPrecio() == precio) {
+            cout << "Precio: "<< material->obtenerPrecio() << " | Titulo: " << material->obtenerTitulo() << " | Tipo: " << material->obtenerTipo() << endl ;
+            return;
+        }
+    }
+
+    for (Pelicula* material : materiales_pelicula) {
+        if (material->obtenerPrecio() == precio) {
+            cout << "Precio: "<< material->obtenerPrecio() << " | Titulo: " << material->obtenerTitulo() << " | Tipo: " << material->obtenerTipo() << endl ;
+            return;
+        }
+    }
+
+    for (Podcast* material : materiales_podcast) {
+        if (material->obtenerPrecio() == precio) {
+            cout << "Precio: "<< material->obtenerPrecio() << " | Titulo: " << material->obtenerTitulo() << " | Tipo: " << material->obtenerTipo() << endl ;
+            return;
+        }
+    }
+}
+
 void MaterialOrdenado::buscarMaterialesPorTipo(int tipo){
         bool encontrado = false;
 
