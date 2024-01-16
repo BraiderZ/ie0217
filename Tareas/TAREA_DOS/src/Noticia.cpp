@@ -6,6 +6,7 @@ Noticia::Noticia(string titulo, string autor, string editorial, string genero, s
         this->tipo_material = "Noticia";
 
         cout << "Agregue un resumen sobre la noticia en cuestion: ";
+        cin.ignore();
         getline(cin, resumen);
         cout << endl;
 

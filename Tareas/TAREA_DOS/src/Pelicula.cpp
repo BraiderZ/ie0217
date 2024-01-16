@@ -6,6 +6,7 @@ Pelicula::Pelicula(string titulo, string autor, string genero, string estado, in
         this->tipo_material = "Pelicula";
 
         cout << "Agregue un resumen sobre de la pelicula en cuestion: ";
+        cin.ignore();
         getline(cin, resumen);
         cout << endl;
 

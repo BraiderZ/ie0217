@@ -175,3 +175,35 @@ MaterialOrdenado::~MaterialOrdenado() {
     materiales_noticia.clear();
     materiales_noticia.clear();
 }
+
+void MaterialOrdenado::tamanoMaterial(string nombre){
+    for (Noticia* material : materiales_noticia) {
+        if (material->obtenerTitulo() == nombre) {
+            material->tamano();
+            return;
+        }
+    }
+
+    for (Libro* material : materiales_libro) {
+        if (material->obtenerTitulo() == nombre) {
+            material->tamano();
+            return;
+        }
+    }
+
+    for (Pelicula* material : materiales_pelicula) {
+        if (material->obtenerTitulo() == nombre) {
+            material->tamano();
+            return;
+        }
+    }
+
+    for (Podcast* material : materiales_podcast) {
+        if (material->obtenerTitulo() == nombre) {
+            material->tamano();
+            return;
+        }
+    }
+
+    cout << "Material no encontro ningun material de entretenimiento con el titulo: " << nombre << endl;
+}

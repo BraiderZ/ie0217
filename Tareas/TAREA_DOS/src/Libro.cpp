@@ -6,6 +6,7 @@ Libro::Libro(string titulo, string autor, string editorial, string genero, strin
         this->tipo_material = "Libro";
 
         cout << "Agregue un resumen sobre el libro en cuestion: ";
+        cin.ignore();
         getline(cin, resumen);
         cout << endl;
 

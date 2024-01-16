@@ -6,6 +6,7 @@ Podcast::Podcast(string titulo, string autor, string genero, string estado, int 
         this->tipo_material = "Podcast";
 
         cout << "Agregue un resumen sobre el podcast en cuestion: ";
+        cin.ignore();
         getline(cin, resumen);
         cout << endl;
 
@@ -33,10 +34,10 @@ void Podcast::imprimirInformacion(){
 
 void Podcast::tamano() {
     if (duracion <= 30){
-        cout << "La pelicula " << titulo << " es de duracion corta." << endl;  
+        cout << "El podcast " << titulo << " es de duracion corta." << endl;  
     } else if (duracion > 30 && duracion < 90){
-        cout << "La pelicula " << titulo << " es de duracion mediana." << endl;
+        cout << "El podcast " << titulo << " es de duracion mediana." << endl;
     } else {
-        cout << "La pelicula " << titulo << " es de duracion larga." << endl;
+        cout << "El podcast " << titulo << " es de duracion larga." << endl;
     }
 }
