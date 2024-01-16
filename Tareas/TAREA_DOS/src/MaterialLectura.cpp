@@ -10,3 +10,15 @@ void MaterialLectura::imprimirInformacion() {
 void MaterialLectura::tamano() {
     cout << "Metodo base" << endl;
 }
+
+string MaterialLectura::obtenerTitulo(){
+    return titulo;
+}
+
+string MaterialLectura::obtenerTipo(){
+    return tipo_material;
+}
+
+int MaterialLectura::obtenerPrecio(){
+    return precio;
+}

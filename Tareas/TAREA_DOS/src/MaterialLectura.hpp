@@ -9,6 +9,9 @@ class MaterialLectura {
         MaterialLectura(string titulo, string autor, string editorial, string genero, string estado, int cantidad_hojas, int precio);
         virtual void tamano();
         virtual void imprimirInformacion();
+        string obtenerTitulo();
+        string obtenerTipo();
+        int obtenerPrecio();
 
     protected:
         string titulo;

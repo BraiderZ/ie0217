@@ -9,6 +9,9 @@ class MaterialAudiovisual {
         MaterialAudiovisual(string titulo, string autor, string genero, string estado, int duracion, int precio);
         virtual void tamano();
         virtual void imprimirInformacion();
+        string obtenerTitulo();
+        string obtenerTipo();
+        int obtenerPrecio();
 
     protected:
         string titulo;

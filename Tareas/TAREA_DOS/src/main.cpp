@@ -2,27 +2,16 @@
 #include "Noticia.hpp"
 #include "Podcast.hpp"
 #include "Pelicula.hpp"
+#include "MaterialOrdenado.hpp"
 
 int main(){
-    Libro* ptr_libro1 = new Libro("Game of Thrones", "George R. R. Martin", "Bantam", "Ciencia Ficcion", "Disponible", 583, 30000);
-    ptr_libro1 -> imprimirInformacion();
-    ptr_libro1 -> tamano();
-    delete ptr_libro1;
-
-    Noticia* noticia1 = new Noticia("Aumento en el precio de la gasolina", "Luis", "ABB", "Informativo", "Disponible", 4, 1000);
-    noticia1 -> imprimirInformacion();
-    noticia1 -> tamano();
-    delete noticia1;
-
-    Pelicula* pelicula1 = new Pelicula("Avengers", "Luis", "Accion", "Reservado", 100, 15000);
-    pelicula1 -> imprimirInformacion();
-    pelicula1 -> tamano();
-    delete pelicula1;
-
-    Podcast* podcast1 = new Podcast("El tiempo vuela", "Luis", "Informativo", "Disponible", 30, 5000);
-    podcast1 -> imprimirInformacion();
-    podcast1 -> tamano();
-    delete podcast1;
-
+    MaterialOrdenado* materiales = new MaterialOrdenado();
+    materiales->agregarMaterial("Game of Thrones", "George R. R. Martin", "Bantam", "Ciencia Ficcion", "Disponible", 583, 30000, "LIBRO");
+    materiales->agregarMaterial("Aumento en el precio de la gasolina", "Luis", "ABB", "Informativo", "Disponible", 4, 1000, "NOTICIA");
+    materiales->agregarMaterial("Avengers", "Luis", "Accion", "Reservado", 100, 15000, "PELICULA");
+    materiales->agregarMaterial("El tiempo vuela", "Luis", "Informativo", "Disponible", 30, 5000, "PODCAST");
+    materiales->eliminarMaterial("Avengers");
+    materiales->buscarMaterialPorTitulo("El tiempo vuela");
+    materiales->buscarMaterialPorTitulo("Avengers");
     return 0;
 }

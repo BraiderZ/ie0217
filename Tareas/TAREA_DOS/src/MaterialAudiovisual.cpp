@@ -10,3 +10,15 @@ void MaterialAudiovisual::imprimirInformacion() {
 void MaterialAudiovisual::tamano() {
     cout << "Metodo base" << endl;
 }
+
+string MaterialAudiovisual::obtenerTitulo(){
+    return titulo;
+}
+
+string MaterialAudiovisual::obtenerTipo(){
+    return tipo_material;
+}
+
+int MaterialAudiovisual::obtenerPrecio(){
+    return precio;
+}
