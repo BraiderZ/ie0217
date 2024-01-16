@@ -42,3 +42,6 @@ void Noticia::tamano() {
         cout << "La noticia " << titulo << " es larga." << endl;
     }
 }
+Noticia::~Noticia(){
+
+}

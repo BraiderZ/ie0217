@@ -22,11 +22,13 @@ void MaterialOrdenado::agregarMaterial(string titulo, string autor, string gener
 }
 
 void MaterialOrdenado::eliminarMaterial(string titulo) {
+    int bandera = 1;
     for (Noticia* material : materiales_noticia) {
         if (material->obtenerTitulo() == titulo) {
             delete material;
             materiales_noticia.erase(remove(materiales_noticia.begin(), materiales_noticia.end(), material), materiales_noticia.end());
             cout << "Eliminado correctamente" << endl;
+            bandera = 2;
             return;
         }
     }
@@ -35,6 +37,7 @@ void MaterialOrdenado::eliminarMaterial(string titulo) {
             delete material;
             materiales_libro.erase(remove(materiales_libro.begin(), materiales_libro.end(), material), materiales_libro.end());
             cout << "Eliminado correctamente" << endl;
+            bandera = 2;
             return;
         }
     }
@@ -43,6 +46,7 @@ void MaterialOrdenado::eliminarMaterial(string titulo) {
             delete material;
             materiales_pelicula.erase(remove(materiales_pelicula.begin(), materiales_pelicula.end(), material), materiales_pelicula.end());
             cout << "Eliminado correctamente" << endl;
+            bandera = 2;
             return;
         }
     }
@@ -51,8 +55,12 @@ void MaterialOrdenado::eliminarMaterial(string titulo) {
             delete material;
             materiales_podcast.erase(remove(materiales_podcast.begin(), materiales_podcast.end(), material), materiales_podcast.end());
             cout << "Eliminado correctamente" << endl;
+            bandera = 2;
             return;
         }
+    }
+    if (bandera == 1){
+        cout << "No existe un material con ese titulo." << endl;
     }
 }
 
@@ -172,8 +180,8 @@ MaterialOrdenado::~MaterialOrdenado() {
     }
     materiales_libro.clear();
     materiales_noticia.clear();
-    materiales_noticia.clear();
-    materiales_noticia.clear();
+    materiales_pelicula.clear();
+    materiales_podcast.clear();
 }
 
 void MaterialOrdenado::tamanoMaterial(string nombre){

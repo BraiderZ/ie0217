@@ -41,3 +41,7 @@ void Podcast::tamano() {
         cout << "El podcast " << titulo << " es de duracion larga." << endl;
     }
 }
+
+Podcast::~Podcast(){
+
+}

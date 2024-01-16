@@ -41,3 +41,6 @@ void Pelicula::tamano() {
         cout << "La pelicula " << titulo << " es de duracion larga." << endl;
     }
 }
+Pelicula::~Pelicula(){
+
+}

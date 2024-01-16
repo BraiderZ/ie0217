@@ -10,6 +10,7 @@ class Pelicula : public MaterialAudiovisual {
         Pelicula(string titulo, string autor, string genero, string estado, int duracion, int precio);
         void imprimirInformacion() override;
         void tamano() override;
+        virtual ~Pelicula();
     protected:
         string resumen;
         string material_relacionado;

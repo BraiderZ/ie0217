@@ -10,6 +10,7 @@ class Podcast : public MaterialAudiovisual {
         Podcast(string titulo, string autor, string genero, string estado, int duracion, int precio);
         void imprimirInformacion() override;
         void tamano() override;
+        virtual ~Podcast();
     protected:
         string resumen;
         string material_relacionado;

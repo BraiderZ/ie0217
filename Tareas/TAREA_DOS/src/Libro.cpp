@@ -42,3 +42,7 @@ void Libro::tamano() {
         cout << "El libro " << titulo << " es largo." << endl;
     }
 }
+
+Libro::~Libro(){
+
+}

@@ -10,6 +10,7 @@ class Libro : public MaterialLectura {
         Libro(string titulo, string autor, string editorial, string genero, string estado, int cantidad_hojas, int precio);
         void imprimirInformacion() override;
         void tamano() override;
+        virtual ~Libro();
     protected:
         string resumen;
         string material_relacionado;

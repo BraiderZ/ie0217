@@ -21,7 +21,7 @@ class MaterialOrdenado  {
         void buscarMaterialesPorTipo(int tipo);
         void buscarMaterialPorPrecio(int precio);
         void tamanoMaterial(string nombre);
-        ~MaterialOrdenado();
+        virtual ~MaterialOrdenado();
         vector<Noticia*> materiales_noticia;
         vector<Libro*> materiales_libro;
         vector<Pelicula*> materiales_pelicula;
