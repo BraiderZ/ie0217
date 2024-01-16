@@ -11,7 +11,7 @@ int main(){
     materiales->agregarMaterial("Avengers", "Luis", "Accion", "Reservado", 100, 15000, "PELICULA");
     materiales->agregarMaterial("El tiempo vuela", "Luis", "Informativo", "Disponible", 30, 5000, "PODCAST");
     materiales->eliminarMaterial("Avengers");
-    materiales->buscarMaterialPorTitulo("El tiempo vuela");
-    materiales->buscarMaterialPorTitulo("Avengers");
+    materiales->agregarMaterial("El hambre del exito", "George", "Argentina", "Psicologia", "Disponible", 83, 50000, "LIBRO");
+    materiales->buscarMaterialesPorTipo(2);
     return 0;
 }

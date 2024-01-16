@@ -29,7 +29,7 @@ void Noticia::imprimirInformacion(){
     cout << "Tamano: " << cantidad_hojas << " hojas." << endl;
     cout << "Precio: " << precio << " colones." << endl;
     cout << "Resumen del libro: " << resumen << endl;
-    cout << "Algunos materiales relacionados al libro son: " << material_relacionado << endl;
+    cout << "Algunos materiales relacionados a la noticia son: " << material_relacionado << endl;
 }
 
 void Noticia::tamano() {

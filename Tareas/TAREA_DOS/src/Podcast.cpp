@@ -28,7 +28,7 @@ void Podcast::imprimirInformacion(){
     cout << "Duracion: " << duracion << " minutos." << endl;
     cout << "Precio: " << precio << " colones." << endl;
     cout << "Resumen del libro: " << resumen << endl;
-    cout << "Algunos materiales relacionados al libro son: " << material_relacionado << endl;
+    cout << "Algunos materiales relacionados al podcast son: " << material_relacionado << endl;
 }
 
 void Podcast::tamano() {
