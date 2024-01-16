@@ -3,7 +3,7 @@
 /**
  * @file funciones.cpp
  * 
- * @brief Implementación de las funciones para el juego de adivinar el número.
+ * @brief Implementación de las funciones para la biblioteca.
  * 
  * 
  * @license 
@@ -24,7 +24,7 @@
  */
 
 /**
- * Muestra el menú del juego. Un total de 4 opciones.
+ * Muestra el menú del juego. Un total de 5 opciones.
  */
 void mostrarMenu(){
     cout << "\n-----Blibioteca de materiales de entretenimiento-----\n";
@@ -35,7 +35,14 @@ void mostrarMenu(){
     cout <<  "5. Salir\n";
 }
 
-
+/** 
+ * Procesa la opción del usuario
+ * @param opcion Número que representa la accion del usuario
+ * @param tipo Representa el tipo de material
+ * @param buscar Número que representa el tipo de búsqueda a realizar
+ * @param nombre Título del material sobre el que se trabaja
+ * 
+ */
 void procesarOpcion(MaterialOrdenado* materiales, MaterialPrecio precio){
     int opcion, tipo, buscar;
     string nombre;
@@ -79,16 +86,16 @@ void procesarOpcion(MaterialOrdenado* materiales, MaterialPrecio precio){
     }
 }
 
+/**
+ * Se encarga de obtener los datos para agregar unn nuevo material 
+ * 
+ */
 void procesar_informacion(int tipo, MaterialOrdenado* materiales){
-    string titulo;
-    string autor;
-    string editorial;
-    string genero;
-    string estado;
-    int cantidad_hojas;
-    int duracion;
-    int precio;
+    // Posibles datos a necesitar
+    string titulo, autor, editorial, genero, estado;
+    int cantidad_hojas, duracion, precio;
     
+    //Dependiendo del tipo de material, debemos agregar diferentes atributos
     switch(tipo){
         case 1: 
             cout << "Ingrese el titulo: ";
@@ -217,6 +224,10 @@ void procesar_informacion(int tipo, MaterialOrdenado* materiales){
     }
 }
 
+/**
+ * Encargada de elegir el tipo de búsqueda e invocarla
+ * @param tipo Puede relacionarse al tipo de material o al tipo de orden cuando se observan los precios
+ */
 void procesar_informacion(int buscar, MaterialOrdenado* materiales, MaterialPrecio precio){
     string nombre;
     int tipo;

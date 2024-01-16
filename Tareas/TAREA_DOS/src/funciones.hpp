@@ -31,25 +31,22 @@ using namespace std;
  */
 
 /**
- * Muestra el menú del juego.
+ * Muestra el menú de la biblioteca.
  */
 void mostrarMenu();
 
 /**
  * Procesa la opción seleccionada por el usuario.
- * @param nivel_dificultad Nivel de dificultad actual.
- * @param cantidad_intentos Cantidad de intentos disponibles.
- * @param intervalo_valores Intervalo de valores para el juego.
- * @param numero_secreto Número secreto a adivinar por el usuario.
- * @param ajuste_dificultad_dificil Ajuste de dificultad para el nivel difícil.
  */
 void procesarOpcion(MaterialOrdenado* materiales, MaterialPrecio precio);
 
 /**
- * Permite al usuario elegir la dificultad del juego.
- * @param nivel_dificultad Nivel de dificultad actual (se actualiza).
+ * Procesa la información para decidir si agregar un nuevo material o buscar un material
+ * 
+ * @param tipo Representa el tipo de material que se va a crear
+ * @param buscar Opcion de busqueda elegida por el usuario
  */
-void procesar_informacion(int tipo, MaterialOrdenado* materiales);
 
+void procesar_informacion(int tipo, MaterialOrdenado* materiales);
 void procesar_informacion(int buscar, MaterialOrdenado* materiales, MaterialPrecio precio);
 #endif
