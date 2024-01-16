@@ -1,0 +1,112 @@
+#include "MaterialOrdenado.hpp"
+
+void MaterialOrdenado::agregarMaterial(string titulo, string autor, string editorial, string genero, string estado, int cantidad_hojas, int precio, string tipo){
+
+    if (tipo == "NOTICIA"){
+        Noticia* nuevoMaterial = new Noticia(titulo, autor, editorial, genero, estado, cantidad_hojas, precio);
+        materiales_noticia.push_back(nuevoMaterial);
+    }else if (tipo == "LIBRO"){
+        Libro* nuevoMaterial = new Libro(titulo, autor, editorial, genero, estado, cantidad_hojas, precio);
+        materiales_libro.push_back(nuevoMaterial);
+    }        
+}
+
+void MaterialOrdenado::agregarMaterial(string titulo, string autor, string genero, string estado, int duracion, int precio, string tipo){
+    if (tipo == "PELICULA"){
+        Pelicula* nuevoMaterial = new Pelicula(titulo, autor, genero, estado, duracion, precio);
+        materiales_pelicula.push_back(nuevoMaterial);
+    }else if (tipo == "PODCAST"){
+        Podcast* nuevoMaterial = new Podcast(titulo, autor, genero, estado, duracion, precio);
+        materiales_podcast.push_back(nuevoMaterial);
+    }  
+}
+
+void MaterialOrdenado::eliminarMaterial(string titulo) {
+    for (Noticia* material : materiales_noticia) {
+        if (material->obtenerTitulo() == titulo) {
+            delete material;
+            materiales_noticia.erase(remove(materiales_noticia.begin(), materiales_noticia.end(), material), materiales_noticia.end());
+            cout << "Eliminado correctamente" << endl;
+            return;
+        }
+    }
+    for (Libro* material : materiales_libro) {
+        if (material->obtenerTitulo() == titulo) {
+            delete material;
+            materiales_libro.erase(remove(materiales_libro.begin(), materiales_libro.end(), material), materiales_libro.end());
+            cout << "Eliminado correctamente" << endl;
+            return;
+        }
+    }
+    for (Pelicula* material : materiales_pelicula) {
+        if (material->obtenerTitulo() == titulo) {
+            delete material;
+            materiales_pelicula.erase(remove(materiales_pelicula.begin(), materiales_pelicula.end(), material), materiales_pelicula.end());
+            cout << "Eliminado correctamente" << endl;
+            return;
+        }
+    }
+    for (Podcast* material : materiales_podcast) {
+        if (material->obtenerTitulo() == titulo) {
+            delete material;
+            materiales_podcast.erase(remove(materiales_podcast.begin(), materiales_podcast.end(), material), materiales_podcast.end());
+            cout << "Eliminado correctamente" << endl;
+            return;
+        }
+    }
+}
+
+void MaterialOrdenado::buscarMaterialPorTitulo(string titulo){
+    for (Noticia* material : materiales_noticia) {
+        if (material->obtenerTitulo() == titulo) {
+            material->imprimirInformacion();
+            return;
+        }
+    }
+
+    for (Libro* material : materiales_libro) {
+        if (material->obtenerTitulo() == titulo) {
+            material->imprimirInformacion();
+            return;
+        }
+    }
+
+    for (Pelicula* material : materiales_pelicula) {
+        if (material->obtenerTitulo() == titulo) {
+            material->imprimirInformacion();
+            return;
+        }
+    }
+
+    for (Podcast* material : materiales_podcast) {
+        if (material->obtenerTitulo() == titulo) {
+            material->imprimirInformacion();
+            return;
+        }
+    }
+
+    cout << "Material no encontro ningun material de entretenimiento con el titulo: " << titulo << endl;
+}
+
+void MaterialOrdenado::buscarMaterialesPorTipo(int tipo){
+}
+
+
+MaterialOrdenado::~MaterialOrdenado() {
+    for (Libro* material : materiales_libro) {
+        delete material;
+    }
+    for (Noticia* material : materiales_noticia) {
+        delete material;
+    }
+    for (Pelicula* material : materiales_pelicula) {
+        delete material;
+    }
+    for (Podcast* material : materiales_podcast) {
+        delete material;
+    }
+    materiales_libro.clear();
+    materiales_noticia.clear();
+    materiales_noticia.clear();
+    materiales_noticia.clear();
+}
