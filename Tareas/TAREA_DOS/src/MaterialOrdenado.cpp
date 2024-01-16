@@ -89,30 +89,40 @@ void MaterialOrdenado::buscarMaterialPorTitulo(string titulo){
 }
 
 void MaterialOrdenado::buscarMaterialesPorTipo(int tipo){
+        bool encontrado = false;
+
     switch(tipo) {
         case 1:
             for (Noticia* material : materiales_noticia) {
                 material->imprimirInformacion();
+                encontrado = true;
             }
             break;
         case 2:
             for (Libro* material : materiales_libro) {
                 material->imprimirInformacion();
+                encontrado = true;
             }
             break;
         case 3:
             for (Pelicula* material : materiales_pelicula) {
                 material->imprimirInformacion();
+                encontrado = true;
             }
             break;
         case 4:
             for (Podcast* material : materiales_podcast) {
                 material->imprimirInformacion();
+                encontrado = true;
             }
             break;
         default:
             cout << "Tipo de material no válido." << endl;
-            break;
+            return;
+    }
+
+    if (!encontrado) {
+        cout << "No se encontraron materiales del tipo especificado." << endl;
     }
 }
 

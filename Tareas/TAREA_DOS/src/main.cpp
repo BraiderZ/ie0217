@@ -13,5 +13,6 @@ int main(){
     materiales->eliminarMaterial("Avengers");
     materiales->agregarMaterial("El hambre del exito", "George", "Argentina", "Psicologia", "Disponible", 83, 50000, "LIBRO");
     materiales->buscarMaterialesPorTipo(2);
+    materiales->buscarMaterialesPorTipo(3);
     return 0;
 }
