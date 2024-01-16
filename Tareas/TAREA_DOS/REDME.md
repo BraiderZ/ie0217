@@ -5,9 +5,12 @@
 
 # Instrucciones para ejecutar el programa 
 
+Este programa "biblioteca.exe" es una biblioteca desarrollada en C++ que permite organizar, agregar, eliminar y buscar múltiples materiales de entretenimiento de manera sencilla. A continuación, se proporcionan las instrucciones para compilar y ejecutar el programa:
 
 ## Requisitos previos
 
+- Asegúrate de tener un entorno de desarrollo C++ instalado, como [MinGW](http://mingw.org/).
+- Clona o descarga el repositorio en tu máquina local.
 
 ## Compilación
 
