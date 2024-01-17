@@ -20,6 +20,9 @@ OBJECTS = $(SOURCES:.cpp=.exe)
 %.exe: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Compila y ejecuta
+all: build run
+
 # Regla para compilar el programa a partir de los archivos objeto
 build: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS)
@@ -28,8 +31,6 @@ build: $(OBJECTS)
 run: build
 	./$(TARGET)
 
-# Compila y ejecuta
-all: build run
 
 # Regla para limpiar los archivos generados 
 .PHONY: clean
