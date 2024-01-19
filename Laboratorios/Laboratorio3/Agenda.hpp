@@ -13,6 +13,8 @@ class Agenda{
         void agregarContacto(const Contacto<T>& contacto);
         void eliminarContacto(const T& telefono);
         void mostrarContactos() const;
+        void mostrarContactos(std::list<Contacto<T>> resultados);
+        std::list<Contacto<T>> buscarContactos(const std::string& patron) const;
     
     private:
         std::list<Contacto<T>> contactos;

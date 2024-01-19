@@ -34,4 +34,13 @@ int main(){
     // Mostrar Contactos
     std::cout <<  "Contactos en la agenda: " << std::endl;
     agenda.mostrarContactos();
+
+    // Buscar contactos con un patron elegido por el usuario y los guardamos en una lista
+    std::list<Contacto<std::string>> resultados = agenda.buscarContactos("Juanito");
+    std::cout << "Contactos que posean el patron Juanito: " << std::endl;
+
+    // Motramos los contactos encontrados
+    agenda.mostrarContactos(resultados);
+
+    return 0;
 }
