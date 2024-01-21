@@ -81,33 +81,78 @@ Noexcept tiene el prósito de inficar si una parte del código no generó ningú
 ### 8. **Contenedores STL**
    **Nombre cinco contenedores diferentes de la STL y explique brevemente en qué situaciones sería apropiado usar cada uno.**
 
+`vector`: Eficaz a la hora de necesitar un conjunto de elementos agrupos que con el tiempo aumente debido a que sun flexibilidad para eliminar y agregar elementos.
+
+`map`: De gran relevancia a la hora de necesitar una búsqueda rápida entre elementos. Además, el orden depende de las claves, por lo que, se podrían organizar agendas de números o cuentas bancarias sin importar el valor porpio de cada usuario.
+
+`array`: En caso de necesitar un orden fijo propuesto por el usuario para una cantidad específica de valores, el `array`` es la mejor opción. Esta herramienta nos puede proporcionar ventajas a la hira de agrupar valores que serán utilizados a lo largo del código, tanto establecidos por el progamador, como por el usuario. Además, en casos de tamaño fijo, proporciona un mejor manejo de memoria que un vector.
+
+`set`: Si se necesitan ordenar ciertos valores que, fueron agregados de manera aleatoria a lo largo de la ejecuación del código, `set` es la mejor opción. Por otro lado, `set` no permite valores que sean iguales, puede ayudarnos en caso de querer almacenar palabras únicas en orden.
+
+`unoerdered_set`: Ya que su mayor diferencia con un `set` es la aleartoriedad de los valores en su valor cada vez que le código se ejecute, podría ayudarnos a la creación de código que necesite cambiar el orden de los casos de manera rápida. Su uso puede estar más relacionado a videojuegos o a la creación rápida de claves que no posean valores iguales y se basen en una cantidad específica establecida por el programador o el usuario.
 
 ### 9. **Iteradores en STL**
    **Explique el concepto de iteradores en la STL y cómo se utilizan para acceder a elementos en contenedores.**
 
+Un iterador posee un uso parecido al de un puntero, ya que, se encarga de apuntar hacia un contenedor específico. La ventaja del uso de los iteradores recae a la hora de conocer no solo el principio, sino también el final del contenedor. Además, existen diferentes tipo de iterador que nos ayudarán a la hora de explorar un contenedor dependiendo de las necesidades del código: iterar desde el inicio o desde el final, imprimir los valores o modificar valores.
+
+Para acceder a los elementos depende del tipo de iterador que se este utilizando. En general, se utiliza un `for` que va desde el incio del contenedor hasta el final o viceversa. Para iterar entre valores, lo más común es utilizar el `++` para vanzar al siguiente o  el `--` para el valor anteriores. A su vez, algunos itedores perimiten usar `+i` o `-i` donde i es la cantidad de valores que avanzaremos. Una vez unbicados en el valor correspondiente, utilizamos la lógica de punteros para acceder al valor.
+
 ### 10. **Algoritmos STL**
 **Proporcione ejemplos de al menos tres algoritmos de la STL y describa sus funciones básicas.**
 
+`sort`: Dado un rango, se encarga de ordenarlos de manera ascedente.
+`find`: Según un rango, su funcionalidad se basa en encontrar un valor específico.
+`reverse`: Modifica el orden de un rango, invirtiéndolo completamente.
+
 ### 11. **Algoritmos Personalizados**
 **¿Cómo podría utilizar un algoritmo personalizado con la STL?**
+
+Los algortimos STL ya posee una funcionalidad por defecto que puede ser modificada por el usuario. Para ello, se debe crear cualquier tipo de invocable (funciones, estructuras con funcionalidades, métodos de clases, ...) y después de especificar el rango como siempre, se agregar como nuevo parámetro el invocable.
 
 ## Expresiones Regulares
 
 ### 12. **Definición de Expresiones Regulares**
 **Defina qué son las expresiones regulares y proporcione un ejemplo simple.**
 
+Una expresión regular consiste en un conjunto de reglas a seguir, establecidas por el programador, a la hora de crear una cadena de texto.
+
+Ejemplo: [0-9]\.$ -> Esta expresión signica que la cadena debe terminar con un número del 0 al 9, seguido por un punto (Luis9.).
+
 ### 13. **Caracteres Especiales**
 **Enumere al menos tres caracteres especiales comúnmente utilizados en expresiones regulares y describa sus funciones.**
+
+`$`: Se usa para definir el elementos anteriores como los últimos de la cadena.
+`\`: En caso de querer utilizar un carácter especial como un elemento, se coloca este carácter antes del otro.
+`*`: El elemento anterios puede estar dentro de la cadena de 0 a infinita cantidad de veces.
 
 ### 14. **Uso de Expresiones Regulares en C++**
 **¿Cómo se utilizan las expresiones regulares en C++? Proporcione un ejemplo.**
 
+Se utizan por medio de la biblioteca `<regex>`. Simplemente se debe utilizar dicha palabra y entre paréntesis definir la cadena con la expresión regular a verificar. Una vez definida la expresión, se puede utilar la función `regex_serch` para verificar si una cadena cumple con el patrón.
+
+Ejemplo: 
+
+```cpp
+auto const regex = std::regex patron("[A-Za-z0-9]+") //Se deben usar mínimo una letra mayúscula seguida de al menos una miúscula y terminar en al menos un número.
+
+auto const texto = std::string("Juan87"); //Cadena a verificar
+bool const verificarTexto = std::regex_search(texto,regex); //Usamos el comando para que verifique que en mi texto se cumpla el regex por medio de un booleano
+
+std::cout << verificarTexto << std::endl //Imprimimos el booleano
+```
+
 ### 15. **Validación de Patrones**
 **¿Por qué las expresiones regulares son útiles para la validación de patrones en cadenas de texto?**
 
+Algunas de las ventajas de utilizar expresiones regulares:
+
+- Mejora la compresión de los patrones a validar.
+- Evita el uso excesivo de `if` para definir la validación, ya que, la expresiones regulares se realiza en una sola línea.
+- Los carácteres especiales facilitan la creación de los patrones a validar: no hay necesidad de definir de 0 las reglas.
+
 # Blibiografía
 
-1. Microsoft C++, C, and Assembler documentation. [Microsoft](https://learn.microsoft.com/en-us/cpp/?view=msvc-170).
-2. Chio Code, Merge Sort | Ordenamiento por mezcla. [Youtube](https://www.youtube.com/watch?v=ACFZn_xQcz8).
+1. IBM, Manejo de errores y excepciones. [IBM] (https://www.ibm.com/docs/es/integration-bus/10.0?topic=extension-errors-exception-handling).
 
 
