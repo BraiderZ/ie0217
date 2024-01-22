@@ -6,6 +6,7 @@
 #include <vector>
 #include <complex>
 #include <typeinfo>
+#include <iomanip>
 
 
 template <typename T>
@@ -15,8 +16,10 @@ class Matriz {
         void operacionMatricial();
         T get_matrices();
     private:
-        std::vector<T> matriz1;
-        std::vector<T> matriz2;
+        int filas;
+        int columnas;
+        std::vector<std::vector<T>> matriz1;
+        std::vector<std::vector<T>> matriz2;
 };
 
 #include "Matriz_practica1.cpp"
