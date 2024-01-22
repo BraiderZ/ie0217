@@ -5,8 +5,8 @@
 #include <stdexcept>
 #include <vector>
 #include <complex>
+#include <typeinfo>
 
-using namespace std;
 
 template <typename T>
 class Matriz {
@@ -15,8 +15,9 @@ class Matriz {
         void operacionMatricial();
         T get_matrices();
     private:
-        vector<T> matriz1;
-        vector<T> matriz 2;
+        std::vector<T> matriz1;
+        std::vector<T> matriz2;
 };
 
+#include "Matriz_practica1.cpp"
 #endif
