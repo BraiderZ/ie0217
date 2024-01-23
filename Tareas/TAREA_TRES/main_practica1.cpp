@@ -1,5 +1,6 @@
 #include "funciones.hpp"
 #include "OperacionesBasicas_practica1.hpp"
+#include "OperacionesComplejas_practica1.hpp"
 
 int main(){
     int opcion;
@@ -42,7 +43,7 @@ int main(){
                 if (continuar == 1){
                     tipo_operacion = matrices.operacionMatricial();
                     if (tipo_operacion != 0){
-                        OperacionesBasicas<complex<float>> operaciones;
+                        OperacionesComplejas<complex<float>> operaciones;
                         operaciones.validarOperacion(matrices, tipo_operacion);
                     }
                 }else{
