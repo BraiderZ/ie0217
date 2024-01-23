@@ -7,10 +7,6 @@ template<typename T>
 class OperacionesBasicas{
     public:
         void validarOperacion(Matriz<T> matrices, int tipo_operacion);
-    private:
-        OperacionesBasicas operator+(Matriz<T> matrices);
-        OperacionesBasicas operator-(Matriz<T> matrices);
-        OperacionesBasicas operator*(Matriz<T> matrices);
 };
 
 

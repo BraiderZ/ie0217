@@ -9,13 +9,17 @@ void OperacionesBasicas<T>::validarOperacion(Matriz<T> matrices, int tipo_operac
     try{
         if (tipo_operacion == 1 || tipo_operacion == 2) {
             if(filas_matriz1 == filas_matriz2 && columnas_matriz1 == columnas_matriz2){
-                std::cout << "Si se puede sumar o restar";
+                if(tipo_operacion == 1){
+                    matrices.sumar(filas_matriz1, columnas_matriz2);
+                }else{
+                    matrices.restar(filas_matriz1, columnas_matriz2);
+                }
             }else{
                 throw std::runtime_error("Para suma y resta las matrices deben tener las mismas dimenciones.");
             }
         }else {
             if (columnas_matriz1 == filas_matriz2){
-                std::cout << "Si se puede multiplicar";
+                matrices.multiplicar(filas_matriz1, columnas_matriz1, filas_matriz2, columnas_matriz2);
             }else{
                 throw std::runtime_error("Para multiplicacion la matriz 1 debe tener las mismas columnas que las filas de la matriz 2.");
             }

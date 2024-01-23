@@ -91,3 +91,46 @@ int Matriz<T>::operacionMatricial(){
     }
     return operacion;
 }
+
+template<typename T>
+void Matriz<T>::sumar(int filas, int columnas) {
+    std::vector<std::vector<T>> matriz_resultado;
+    matriz_resultado.resize(filas, std::vector<T>(columnas));
+    for (int i = 0; i < filas; ++i) { 
+        for (int j = 0; j < columnas; ++j) { 
+            T valor_matriz1 = matriz1[i][j];
+            T valor_matriz2 = matriz2[i][j];
+            T resultado = valor_matriz1 + valor_matriz2;
+            matriz_resultado[i][j] = resultado;
+        }
+    }
+}
+
+template<typename T>
+void Matriz<T>::restar(int filas, int columnas) {
+    std::vector<std::vector<T>> matriz_resultado;
+    matriz_resultado.resize(filas, std::vector<T>(columnas));
+
+    for (int i = 0; i < filas; ++i) {  // Corregir aquí, iniciar desde 0
+        for (int j = 0; j < columnas; ++j) {  // Corregir aquí, iniciar desde 0
+            T valor_matriz1 = matriz1[i][j];
+            T valor_matriz2 = matriz2[i][j];
+            T resultado = valor_matriz1 - valor_matriz2;
+            matriz_resultado[i][j] = resultado;
+        }
+    }
+}
+
+template<typename T>
+void Matriz<T>::multiplicar(int filas_matriz1, int columnas_matriz1, int filas_matriz2, int columnas_matriz2) {
+    std::vector<std::vector<T>> matriz_resultado;
+    matriz_resultado.resize(filas_matriz1, std::vector<T>(columnas_matriz2, 0));
+
+    for (int i = 0; i < filas_matriz1; ++i) {
+        for (int j = 0; j < columnas_matriz2; ++j) {
+            for (int k = 0; k < columnas_matriz1; ++k) {
+                matriz_resultado[i][j] += matriz1[i][k] * matriz2[k][j];
+            }
+        }
+    }
+}
