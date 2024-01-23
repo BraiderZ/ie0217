@@ -12,10 +12,8 @@
 template <typename T>
 class Matriz {
     public:
-        void tamanoDatosMatriz();
-        void operacionMatricial();
-        T get_matrices();
-    private:
+        int tamanoDatosMatriz();
+        int operacionMatricial();
         int filas;
         int columnas;
         std::vector<std::vector<T>> matriz1;
