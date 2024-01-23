@@ -5,7 +5,7 @@ int Matriz<T>::tamanoDatosMatriz(){
         const std::type_info& tipo = typeid(T);
     
     try{   
-        if (tipo == typeid(int) || tipo == typeid(double) || tipo == typeid(std::complex<double>)) {
+        if (tipo == typeid(int) || tipo == typeid(double) || tipo == typeid(std::complex<float>)) {
             for (int i = 1; i <= 2; ++i) {
                 std::cout << "Ingrese la cantidad de filas de la matriz " << i << ": ";
                 std::cin >> filas;
@@ -22,51 +22,35 @@ int Matriz<T>::tamanoDatosMatriz(){
                     throw 0;
                 }
 
-                for (int j = 1; j <= filas; j++) {
-                    for (int k = 1; k <= columnas; k++) {
-                        T valor;
-
-                        if (tipo == typeid(std::complex<double>)) {
-                            // Explicacion para valores complejos
-                            std::cout << "Ingrese el valor de la parte real para la posicion [" << j << "][" << k << "] en la matriz " << i << ": ";
-                            double parte_real;
-                            std::cin >> parte_real;
-
-                            std::cout << "Ingrese el valor de la parte imaginaria para la posicion [" << j << "][" << k << "] en la matriz " << i << ": ";
-                            double parte_imaginaria;
-                            std::cin >> parte_imaginaria;
-
-                            std::complex<double> valor(parte_real, parte_imaginaria);
-                        } else {
-                            // Explicacion para valores enteros o de punto flotante
-                            std::cout << "Ingrese el valor para la posicion [" << j << "][" << k << "] en la matriz " << i << ": ";
-                            std::cin >> valor;
+                for (int j = 0; j < filas; j++) {
+                    for (int k = 0; k < columnas; k++) {
+                        if(tipo == typeid(std::complex<float>)){
+                            std::cout << "Ingrese el elemento en la posicion (" << j + 1 << "," << k + 1 << ")\nAl ser compleja ingrese los valores de la siguiente manera: '(parte real, parte imaginaria)': ";
+                        }else{
+                            std::cout << "Ingrese el elemento en la posicion (" << j + 1 << "," << k + 1 << "): ";
                         }
+                        std::string entrada;
+                        std::cin >> entrada;
 
-                        if (std::cin.fail()) {
+                        std::istringstream iss(entrada);
+                        T elemento;
+                        iss >> elemento;
+
+                        if (iss.fail()) {
                             throw 1;
                         }
-
-                        if (i == 1) {
-                            matriz1[j-1][k-1] = valor;
-                        } else {
-                            matriz2[j-1][k-1] = valor;
+                        if (i == 1){
+                            matriz1[j][k] = elemento;
+                        }else{
+                            matriz2[j][k]= elemento;
                         }
+                                
                     }
                 }
             }
 
-            int filas_matriz1 = matriz1.size();
-            int columnas_matriz1 = (filas_matriz1 > 0) ? matriz1.at(0).size() : 0;
-
-            std::cout << "Tamano de la matriz1: " << filas_matriz1 << "x" << columnas_matriz1 << std::endl;
-
-            int filas_matriz2 = matriz2.size();
-            int columnas_matriz2 = (filas_matriz2 > 0) ? matriz2.at(0).size() : 0;
-
-            std::cout << "Tamano de la matriz2: " << filas_matriz2 << "x" << columnas_matriz2 << std::endl;
         } else {
-            throw std::runtime_error("Error: el tipo de dato especificado no está permitido");
+            throw std::runtime_error("El tipo de dato especificado no está permitido");
         }
     }catch (std::exception& e){
         std::cout << std::endl;
