@@ -3,8 +3,55 @@
 ### Estudiante: Luis Brenes Campos - C21324
 ### Profesor: Rafael Esteban Badilla Alvarado
 
-# Instrucciones para ejecutar el programa 
+# Instrucciones para ejecutar los programas 
 
+El programa "matrices.exe" encargado de recibir dos matrices y realizar las operación básica elegida por el usuario. Por otro lado el programa "expresiones_regulares.exe" se encarga de recibir un correo y verificar que cumpla con el patrón establecido. A continuación, se proporcionan las instrucciones para compilar y ejecutar los programas:
+
+## Requisitos previos
+
+- Asegúrate de tener un entorno de desarrollo C++ instalado, como [MinGW](http://mingw.org/).
+- Clona o descarga el repositorio en tu máquina local.
+
+## Compilación
+
+1. Abre una terminal o un símbolo del sistema.
+2. Navega al directorio donde se encuentra el Makefile y los archivos fuente.
+3. Ejecuta el siguiente comando si quieres compilar ambos programas:
+
+   ```bash
+   mingw32-make
+
+## Targets específicos
+
+### Compilar código y crear el archivo matrices.exe
+- Ejecuta el siguiente comando:
+
+   ```bash
+   mingw32-make build1
+
+### Compilar código y crear el archivo expresiones_regulares.exe
+- Ejecuta el siguiente comando:
+
+   ```bash
+   mingw32-make build2
+
+### Ejecutar y crear el archivo matrices.exe
+- Ejecuta el siguiente comando:
+
+   ```bash
+   mingw32-make run1
+
+### Ejecutar y crear el archivo expresiones_regulares.exe
+- Ejecuta el siguiente comando:
+
+   ```bash
+   mingw32-make run2
+
+### Eliminar archivos
+- Ejecuta el siguiente comando:
+
+   ```bash
+   mingw32-make clean
 
 
 
