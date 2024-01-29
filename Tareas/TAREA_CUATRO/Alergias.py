@@ -22,7 +22,7 @@ class Alergias:
                     "Valores": self.valores_alergias,
                 }
             )
-            print(df, "\n")
+            print(df.to_string(index=False), "\n")
         elif (opcion == 2):
             nombre = input("Ingrese el nombre de la alergia de la que desea saber informacion: ")
             existe_alergia = False

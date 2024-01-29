@@ -1,6 +1,7 @@
 import pandas as pd
 from time import sleep
 
+
 class EvalucionEspecifica():
     def __init__(self):
         self.puntuacion_usuario = int(input("Ingrese su puntuacion de alergia: "))
@@ -12,7 +13,7 @@ class EvalucionEspecifica():
                 "Valores": combinacion_valores,
             }
         )
-        print(df)
+        print(df.to_string(index=False))
 
     def encontrarCombinacion(self, alergias_sistema, actual, suma, combinacion_valores, combinacion_nombres):
         if suma == self.puntuacion_usuario:

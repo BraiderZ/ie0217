@@ -2,6 +2,7 @@ from time import sleep
 from Alergias import Alergias
 from EvaluacionEspecifica import EvalucionEspecifica
 from TiposAlergia import TiposAlergia
+from EvaluacionGeneral import EvaluacionGeneral
 
 alergias_sistema = Alergias("Alergias.txt")
 
@@ -37,12 +38,11 @@ def procesarOpcion(opcion, alergias_sistema):
         evaluacion_usuario.evaluarAlergias(alergias_sistema)
     elif (opcion == 3):
         tipos_alergia = TiposAlergia()
-        tipos_alergia.opcionIngresar()
-        tipos_alergia.evaluarDatos(alergias_sistema)
-        print(tipos_alergia.alergias_nombres_usuario)
-        print(tipos_alergia.alergias_valores_usuario)
-        print(tipos_alergia.alergias_sin_nombre)
-        print(tipos_alergia.alergias_sin_valor)
+        tipos_alergia.opcionIngresar(alergias_sistema)
+        evaluacion = EvaluacionGeneral()
+        if (tipos_alergia.opcion == 1 or tipos_alergia.opcion == 2 or tipos_alergia.opcion == 3):
+            evaluacion.calcularPuntuacion(tipos_alergia)
+
     elif (opcion == 5):
         print("Gracias por usar nuestro sistema de alergias!")
         exit(0)
@@ -51,6 +51,7 @@ def procesarOpcion(opcion, alergias_sistema):
 
 while True:
     try:
+        
         opcion = opcionMenu()
         procesarOpcion(opcion, alergias_sistema)
     except ValueError:

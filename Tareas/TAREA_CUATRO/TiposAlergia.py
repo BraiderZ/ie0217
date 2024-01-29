@@ -1,21 +1,22 @@
 class TiposAlergia:
-    lista_inicial_valores = []
-    lista_inicial_nombres = []
-    alergias_nombres_usuario = []
-    alergias_valores_usuario = []
-    alergias_sin_nombre = []
-    alergias_sin_valor = []
-    opcion = 0
-    cantidad_alergias = 0
+    def __init__(self):
+        self.lista_inicial_valores = []
+        self.lista_inicial_nombres = []
+        self.alergias_nombres_usuario = []
+        self.alergias_valores_usuario = []
+        self.alergias_sin_nombre = []
+        self.alergias_sin_valor = []
+        self.opcion = 0
+        self.cantidad_alergias = 0
 
-    def opcionIngresar(self):
+    def opcionIngresar(self, alergias_sistema):
         print("\n---Maneras de ingresar las alergias---\n")
         print("1. Solo nombres de las alergias")
         print("2. Solo valores de las alergias")
         print("3. Nombres y valores de las alergias")
         self.opcion = int(input("Elija una manera: "))
         self.cantidad_alergias = int(input("Ingrese la cantidad de alergias a verficiar: "))
-        self.ingresarAlergias()
+        self.ingresarAlergias(alergias_sistema)
     
     def evaluarDatos(self, alergias_sistema):
         if (self.opcion == 1):
@@ -26,6 +27,7 @@ class TiposAlergia:
                         self.alergias_nombres_usuario.append(alergias_sistema.nombres_alergias[j])
                         self.alergias_valores_usuario.append(alergias_sistema.valores_alergias[j])
                         parte_sistema = True
+                        break
                 if (parte_sistema == False):
                     self.alergias_sin_valor.append(self.lista_inicial_nombres[i])
 
@@ -37,6 +39,7 @@ class TiposAlergia:
                         self.alergias_nombres_usuario.append(alergias_sistema.nombres_alergias[j])
                         self.alergias_valores_usuario.append(alergias_sistema.valores_alergias[j])
                         parte_sistema = True
+                        break
                 if (parte_sistema == False):
                     self.alergias_sin_nombre.append(self.lista_inicial_valores[i])
 
@@ -58,16 +61,18 @@ class TiposAlergia:
                         self.alergias_sin_valor.remove(self.alergias_sin_valor[j])
                         break
 
-    def ingresarAlergias(self):
+    def ingresarAlergias(self, alergias_sistema):
         if (self.opcion == 1):
             for i in range(self.cantidad_alergias):
                 nombre = input(f"Ingrese el nombre de la alergia {i+1}: ")
                 if (nombre != ''):
                     self.lista_inicial_nombres.append(nombre)
+            self.evaluarDatos(alergias_sistema)
         elif (self.opcion == 2):
             for i in range(self.cantidad_alergias):
                 valor = int(input(f"Ingrese el valor de la alergia {i+1}: "))
                 self.lista_inicial_valores.append(valor)
+            self.evaluarDatos(alergias_sistema)
         elif (self.opcion == 3):
             for i in range(self.cantidad_alergias):
                 nombre = input(f"Ingrese el nombre de la alergia {i+1}\
@@ -83,5 +88,6 @@ class TiposAlergia:
                 else:
                     self.alergias_nombres_usuario.append(nombre)
                     self.alergias_valores_usuario.append(valor)
+            self.evaluarDatos(alergias_sistema)
         else:
             print("La opcion elegida es invalida\n")
