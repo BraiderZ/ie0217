@@ -42,7 +42,8 @@ def procesarOpcion(opcion, alergias_sistema):
         evaluacion = EvaluacionGeneral()
         if (tipos_alergia.opcion == 1 or tipos_alergia.opcion == 2 or tipos_alergia.opcion == 3):
             evaluacion.calcularPuntuacion(tipos_alergia)
-
+    elif (opcion == 4):
+        alergias_sistema.nuevaAlergia()
     elif (opcion == 5):
         print("Gracias por usar nuestro sistema de alergias!")
         exit(0)
