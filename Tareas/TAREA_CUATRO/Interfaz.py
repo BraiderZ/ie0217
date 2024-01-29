@@ -1,7 +1,9 @@
 from time import sleep
 from Alergias import Alergias
+from EvaluacionEspecifica import EvalucionEspecifica
 
 alergias_sistema = Alergias("Alergias.txt")
+
 
 def opcionMenu():
     print("----Bienvenido al sistema de manejo de alergias!----")
@@ -29,6 +31,9 @@ def procesarOpcion(opcion, alergias_sistema):
         else:
             print("La opcion elegida no existe")
             sleep(1)
+    elif (opcion == 2):
+        evaluacion_usuario = EvalucionEspecifica()
+        evaluacion_usuario.evaluarAlergias(alergias_sistema)
     elif (opcion == 5):
         print("Gracias por usar nuestro sistema de alergias!")
         exit(0)
