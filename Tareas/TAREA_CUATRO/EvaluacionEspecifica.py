@@ -33,4 +33,4 @@ class EvalucionEspecifica():
             print("Estas son tus alergias.\nPor favor, evita comer los alimentos mencionados en la lista.\n")
             sleep(3)
         else:
-            print("No hay combinación que sume exactamente la puntuación del usuario.")
+            print("No hay combinación que sume exactamente la puntuación del usuario.\n")

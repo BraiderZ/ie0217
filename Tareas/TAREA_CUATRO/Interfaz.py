@@ -37,7 +37,8 @@ def procesarOpcion(opcion, alergias_sistema):
     elif (opcion == 5):
         print("Gracias por usar nuestro sistema de alergias!")
         exit(0)
-
+    else:
+        print("La opcion elegida es invalida\n")
 
 while True:
     try:
