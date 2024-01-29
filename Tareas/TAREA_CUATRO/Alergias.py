@@ -34,7 +34,3 @@ class Alergias:
             if (existe_alergia == False):
                 print("La alergia mencionada no existe en el sistema.")
 
-
-alergias = Alergias("Alergias.txt")
-alergias.imprimirValores(1)
-alergias.imprimirValores(2)
