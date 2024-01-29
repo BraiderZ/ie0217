@@ -1,9 +1,22 @@
+import pandas as pd
+from time import sleep
+
 class EvalucionEspecifica():
     def __init__(self):
         self.puntuacion_usuario = int(input("Ingrese su puntuacion de alergia: "))
 
+    def imprimirResultados(self, combinacion_valores, combinacion_nombres):
+        df = pd.DataFrame(
+            {
+                "Alergias del usuario": combinacion_nombres,
+                "Valores": combinacion_valores,
+            }
+        )
+        print(df)
+
     def encontrarCombinacion(self, alergias_sistema, actual, suma, combinacion_valores, combinacion_nombres):
         if suma == self.puntuacion_usuario:
+            self.imprimirResultados(combinacion_valores, combinacion_nombres)
             return True
 
         for i in range(actual, len(alergias_sistema.valores_alergias)):
@@ -17,6 +30,7 @@ class EvalucionEspecifica():
 
     def evaluarAlergias(self, alergias_sistema):
         if self.encontrarCombinacion(alergias_sistema, 0, 0, [], []):
-            print("Se encontró una combinación que suma exactamente la puntuación del usuario.")
+            print("Estas son tus alergias.\nPor favor, evita comer los alimentos mencionados en la lista.\n")
+            sleep(3)
         else:
             print("No hay combinación que sume exactamente la puntuación del usuario.")
