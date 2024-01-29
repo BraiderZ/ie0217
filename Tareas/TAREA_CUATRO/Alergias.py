@@ -24,8 +24,17 @@ class Alergias:
             )
             print(df)
         elif (opcion == 2):
-            pass
+            nombre = input("Ingrese el nombre de la alergia de la que desea saber informacion: ")
+            existe_alergia = False
+            for i in range(len(self.nombres_alergias)):
+                nombre_sistema = self.nombres_alergias[i]
+                if (nombre.lower() == nombre_sistema.lower()):
+                    print(f"Nombre de la alergia: {self.nombres_alergias[i]} --- Valor: {self.valores_alergias[i]}")
+                    existe_alergia = True
+            if (existe_alergia == False):
+                print("La alergia mencionada no existe en el sistema.")
 
 
 alergias = Alergias("Alergias.txt")
 alergias.imprimirValores(1)
+alergias.imprimirValores(2)
