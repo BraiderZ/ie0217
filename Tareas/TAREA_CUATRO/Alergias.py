@@ -51,3 +51,5 @@ class Alergias:
             self.valores_alergias.append(valor)
             print("Nueva alergia agregada al sistema")
             sleep(1)
+        else:
+            print("El valor ingresado no es potencia de 2")
