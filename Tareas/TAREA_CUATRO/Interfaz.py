@@ -1,10 +1,11 @@
+import timeit
 from time import sleep
 from Alergias import Alergias
 from EvaluacionEspecifica import EvalucionEspecifica
 from TiposAlergia import TiposAlergia
 from EvaluacionGeneral import EvaluacionGeneral
 
-alergias_sistema = Alergias("Alergias.txt")
+
 
 
 def opcionMenu():
@@ -46,15 +47,25 @@ def procesarOpcion(opcion, alergias_sistema):
         alergias_sistema.nuevaAlergia()
     elif (opcion == 5):
         print("Gracias por usar nuestro sistema de alergias!")
-        exit(0)
+        return 1
     else:
         print("La opcion elegida es invalida\n")
 
-while True:
-    try:
-        
-        opcion = opcionMenu()
-        procesarOpcion(opcion, alergias_sistema)
-    except ValueError:
-        print("Error: Haz ingresado un valor incorrecto... Intente nuevamente")
-        sleep(1)
+def main():
+    alergias_sistema = Alergias("Alergias.txt")
+    seguir_ejecuntado = None
+    while seguir_ejecuntado is None:
+        try:
+            opcion = opcionMenu()
+            seguir_ejecuntado = procesarOpcion(opcion, alergias_sistema)
+        except ValueError:
+            print("Error: Haz ingresado un valor incorrecto... Intente nuevamente")
+            sleep(1)
+
+
+if __name__ == "__main__":
+    inicio = timeit.default_timer()
+    main()
+    fin = timeit.default_timer()
+    tiempo_ejecucion = fin - inicio
+    print(f"Tiempo de ejecución: {tiempo_ejecucion} segundos")
