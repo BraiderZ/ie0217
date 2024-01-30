@@ -128,29 +128,108 @@ Así de simple, un mismo método posee dos funcionalidades diferentes dependiedo
 
 Para la medición del tiempo de ejecución, la interfaz cambió a una función para ser capaz de iniciarla mientras timet toma la medición. Una vez colocada la parte del código extra, se realizaron pruebas con 50 alergias y con 11 alergias. Las pruebas fueron: impresión de todas las alergias, combinación del puntaje de alergia del usuario, agregar nombres de las alergias a verificar, agregar nombres y valores de las alergias a verificar, y agregar nuevo valor a la lista de alergias. Esto para verificar la mayor cantidad de métodos posibles.
 
+Si desea ver el commit donde se agregó el código relacionado a esta parte:
+
+[Enlace al Commit](https://github.com/BraiderZ/ie0217/commit/cd47a6f982baf25e695436ee0171ca6368d6c6d7)
+
+### Impresión de todas las alergias
+
+#### 11 alergias
+
 ![11 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion1.png)
+
+#### 50 alergias
 
 ![50 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion1.png)
 
+En este caso podemos determinar que el tiempo de ejecución es muy parecido, siendo tan solo una diferencia de aproximadamente un segundo. **Cabe destacar para esta parte como el resto de pruebas, que existen sleeps en varias partes del código para mejorar la visulización del usuario y este tiempo también lo toma en cuenta la medición.**
+
+Si eliminamos ese tiempo extra del sleep, rondan entre los 3 y 2 segundos de ejecución, lo cual, si contamos los momentos donde interviene el usuario, es muy poco.
+
 ### Combinación del puntaje de alergia del usuario
+
+#### 11 alergias
 
 ![11 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion2.png)
 
+#### 50 alergias
+
 ![50 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion2.png)
+
+En la parte del código donde el usuario ingresa su puntaje de alergia es donde podemos observar mayor diferencia ya su vez, mayor tiempo que en el resto de proceso. Es importante tener en cuenta que, esto se debe a la recursividad utilizada para buscar la combinación correcta, ya que, entre más valores se agreguen a la lista de alergias, la cantidad de posibilidades aumenta desproporcionalmente.
+
+En el caso de 11 alergias se usó un puntaje de 4 dígitos debido a que fue el mayor valor encontrado para buscar el máximo tiempo posible. Mientras que, se usaron 8 dígitos en el caso de 50 alergias, ya que, con 10 se estuvo esperando más de 30 minutos de que el  programa diera una respuesta y terminaba su búsqueda.
+
+Todo esto puede deberse a la propiedad exponencial que posee la recursividad creada.
 
 ### Agregar nombres de las alergias a verificar
 
+#### 11 alergias
+
 ![11 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion3.1.png)
+
+#### 50 alergias
 
 ![50 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion3.1.png)
 
+Nuevamente tenemos un caso donde los resultados son muy parecidos. Las diferencias de tiempo inclusive pueden estar arraigadas al momento donde se ingresaron los datos, o sea, no es problema del programa.
+
 ### Agregar nombres y valores de las alergias a verificar
+
+#### 11 alergias
 
 ![11 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion3.3.png)
 
+#### 50 alergias
+
 ![50 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion3.3.png)
 
+A la hora de agregar tanto el valor como el nombre, sí podemos observar una diferencia más significativa. Ya aquí puede entrar en juego la cantidad de verificaciones que tiene que realizar el código y como este se ve afectado dependiendo de la cantidad de alergias en el sistema.
+
 ### Agregar nuevo valor a la lista de alergias
+
+#### 11 alergias
+
+![11 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion4.png)
+
+#### 50 alergias
+
+![50 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion4.png)
+
+Un caso poco particular al ser la ejecución con más alergias quien obtiene una medición más grande de tiempo. Esto nos detalla nuevamente el tiempo que tardó el usuario en ingresar los datos y no tanto la falta de optimización del código.
+
+## Perfilado del Código
+
+Para el perfilado se decidió utilizar cProfile. Esta vez, en vez de realizar pruebas dependiendo de la función a realizar, se prefierió una única prueba en donde se utilizara una vez cada una de las 4 opciones disponibles para el usuario: cProfile nos dará los resultados por separado de cada función. Igualmente, esta única prueba se realiza tanto con 11 como con 50 alergias.
+
+Solo se agregán los primeros valores que proporcione el cProfiles, ya que, muchos de los siguientes procesos son marcados con 0 de tiempo total.
+
+El commit con el código para el perfilado es el siguiente:
+
+[Enlace al Commit](https://github.com/BraiderZ/ie0217/commit/e73b7156a8f674b372146376744fc63e42e4dc01)
+
+### 11 alergias
+
+![11 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_cProfile.png)
+
+### 50 alergias
+
+![50 alergias](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_cProfile.png)
+
+En primera instancia, los tiempos totales de ambas evaluaciones tienen más del doble diferencia, viendose más marcado el hecho de que entre más alergias, el código tiene que realizar más procesos. Si obervsamos con detenimiento todo el tiempo se almacena también en el main, debido a que es quienn inicia y termina el programa.
+
+En segunda instancia, para las 11 alergias, el tiempo más destacado es que toma opcionIngresar, o sea, momentos donde es el usuario quien tarde lo que quiera en ingresar opciones. Por otro lado, con 50 alergias vuelve a ser encontrarCombinación quien toma una gran parte del tiempo, siendo este el proceso que debe buscar la combinación correcta en caso de que el usuario ingrese su puntaje de alergia. Inclusive, para las 11 alergias este método no se encuentra en el top, dandonos una idea de lo mucho que le afecta a la ejecución valorar casos grandes.
+
+Observando más a detalle esta recursividad de encontrar Combinacion y tomando en cuenta que cada vez que no encuentra una solución vuelve a llamarse, observamos como hay más de 6 millones de llamadas al método.
+
+
+## Reflexión final
+
+El código en su complejidad, posee buenos niveles de ejecución, tanto así que los sleeps sí son buena opción para mejorar la visualización. Sin embargo, la búsqueda de combinaciones debe mejorarse mucho para conseguir una velocidad óptima en caso de que le usuario necesite agregar un puntaje alto cuando hay muchas alergias en el sistema.
+
+Una posible solución al problema puede estar relacionado a cómo las potencias de 2 se relacionan con los bits y la posibilidad del lenguaje de manipular bits. Mi falta de conocimiento sobre el tema de bits debido a cursos que me faltan por llevar, dificulta mi posibilidad de realizar dicha solución.
+
+Esto nos deja claro como la programación puede estar tan relacionado a otro temas como lo es la ingeriería y las matemáticas. Un buen programador no solo conoce las bibliotecas y comando de un lenguaje, también conoce sobre múltiples temas que mejorar la velocidad y eficacia de su código.
 
 # Blibiografía
 
