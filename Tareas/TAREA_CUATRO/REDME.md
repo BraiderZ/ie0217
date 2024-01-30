@@ -3,7 +3,9 @@
 ### Estudiante: Luis Brenes Campos - C21324
 ### Profesor: Rafael Esteban Badilla Alvarado
 
-# Instrucciones para ejecutar el programa "adivina.exe"
+# Instrucciones para ejecutar el programa
+
+El programa se encarga de realizar un manejo de alergias dentro de un sistema. Puede imprimir las alergias, agregar su puntuación para saber qué alergias posee o agregar sus alegias, valores y/o nombres para obtener su puntuación, o agregar una nueva alergia al sistema.
 
 
 ## Requisitos previos
@@ -13,8 +15,42 @@
 
 ## Compilación
 
+1. Abre una terminal o un símbolo del sistema.
+2. Navega al directorio donde se encuentra el Makefile y los archivos fuente.
+3. Ejecuta el siguiente comando si quieres ejecutar el programa:
 
-## Targets específicos
+   ```bash
+   make
+
+## Diferentes opciones del menú
+
+### Imprimir alergias del sistema
+
+1. Ingrese en la termina el número 1.
+2. Puede tomar dos caminos:
+- Ingrese 1 en caso de querer imprimir todas las alergias.
+- Ingrese 2 en caso de querer imprimir una alergia específica. Seguidamente, escriba el nombre de dicha alergia.
+
+### Conocer sus alergias
+
+1. Ingrese la opción 2.
+2. Ingrese su puntuación de alergia.
+
+### Conocer su puntuación de alergia
+
+1. Ingrese la opción 3
+2. Ingrese 1 si solo colocará nombres, 2 si solo valores y 3 ambos.
+3. En caso de elegir 3, presione enter si no quiere colocar un nombre o 0 si no quiere colocar un valor.
+
+### Agregar nueva alergia al sistema
+
+1. Ingrese la opción 4.
+2. Ingrese el nombre y valor de la alergia que desea agregar.
+3. **Atención**: le adjuntamos la siguiente potencia de 2 debido a ser un numero muy complejo --- 1125899906842624.
+
+### Salir
+
+1. Ingrese la opción 5.
 
 # Parte Teórica
 
