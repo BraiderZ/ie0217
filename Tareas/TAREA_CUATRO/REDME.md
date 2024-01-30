@@ -131,21 +131,25 @@ Para la medición del tiempo de ejecución, la interfaz cambió a una función p
 ### Impresión de todas las alergias
 
 ![11 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion1.png]
+
 ![50 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion1.png]
 
 ### Combinación del puntaje de alergia del usuario
 
 ![11 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion2.png]
+
 ![50 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion2.png]
 
 ### Agregar nombres de las alergias a verificar
 
 ![11 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion3.1.png]
+
 ![50 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion3.1.png]
 
 ### Agregar nombres y valores de las alergias a verificar
 
 ![11 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion3.3.png]
+
 ![50 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion3.3.png]
 
 ### Agregar nuevo valor a la lista de alergias
