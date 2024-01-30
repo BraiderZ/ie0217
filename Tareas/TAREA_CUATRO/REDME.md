@@ -122,6 +122,34 @@ Esto se realiza de una manera muy sencilla. En primera instancia, creamos una cl
 
 Así de simple, un mismo método posee dos funcionalidades diferentes dependiedo de la clase desde la que se invocó gracias a la sobreescritura. 
 
+# Parte Práctica 2
+
+## Medición de Tiempo de Ejecución
+
+Para la medición del tiempo de ejecución, la interfaz cambió a una función para ser capaz de iniciarla mientras timet toma la medición. Una vez colocada la parte del código extra, se realizaron pruebas con 50 alergias y con 11 alergias. Las pruebas fueron: impresión de todas las alergias, combinación del puntaje de alergia del usuario, agregar nombres de las alergias a verificar, agregar nombres y valores de las alergias a verificar, y agregar nuevo valor a la lista de alergias. Esto para verificar la mayor cantidad de métodos posibles.
+
+### Impresión de todas las alergias
+
+![11 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion1.png]
+![50 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion1.png]
+
+### Combinación del puntaje de alergia del usuario
+
+![11 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion2.png]
+![50 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion2.png]
+
+### Agregar nombres de las alergias a verificar
+
+![11 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion3.1.png]
+![50 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion3.1.png]
+
+### Agregar nombres y valores de las alergias a verificar
+
+![11 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/11%20Alergias_Opcion3.3.png]
+![50 alergias][https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CUATRO/50%20Alergias_Opcion3.3.png]
+
+### Agregar nuevo valor a la lista de alergias
+
 # Blibiografía
 
 1. Learn Pyton, Free Interactive Python Tutorial. [LearnPython](https://www.learnpython.org/).
