@@ -1,4 +1,4 @@
-import timeit
+import cProfile
 from time import sleep
 from Alergias import Alergias
 from EvaluacionEspecifica import EvalucionEspecifica
@@ -62,10 +62,18 @@ def main():
             print("Error: Haz ingresado un valor incorrecto... Intente nuevamente")
             sleep(1)
 
-
 if __name__ == "__main__":
-    inicio = timeit.default_timer()
+    # Crear un objeto cProfile
+    profiler = cProfile.Profile()
+
+    # Iniciar el perfilado
+    profiler.enable()
+
+    # Ejecutar el código a perfilar
     main()
-    fin = timeit.default_timer()
-    tiempo_ejecucion = fin - inicio
-    print(f"Tiempo de ejecución: {tiempo_ejecucion} segundos")
+
+    # Detener el perfilado
+    profiler.disable()
+
+    # Imprimir estadísticas
+    profiler.print_stats(sort='cumulative')
