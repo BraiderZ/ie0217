@@ -1,11 +1,8 @@
-import cProfile
 from time import sleep
 from Alergias import Alergias
 from EvaluacionEspecifica import EvalucionEspecifica
 from TiposAlergia import TiposAlergia
 from EvaluacionGeneral import EvaluacionGeneral
-
-
 
 
 def opcionMenu():
@@ -47,33 +44,20 @@ def procesarOpcion(opcion, alergias_sistema):
         alergias_sistema.nuevaAlergia()
     elif (opcion == 5):
         print("Gracias por usar nuestro sistema de alergias!")
-        return 1
+        exit(0)
     else:
         print("La opcion elegida es invalida\n")
 
+
 def main():
     alergias_sistema = Alergias("Alergias.txt")
-    seguir_ejecuntado = None
-    while seguir_ejecuntado is None:
+    while True:
         try:
             opcion = opcionMenu()
-            seguir_ejecuntado = procesarOpcion(opcion, alergias_sistema)
+            procesarOpcion(opcion, alergias_sistema)
         except ValueError:
             print("Error: Haz ingresado un valor incorrecto... Intente nuevamente")
             sleep(1)
 
-if __name__ == "__main__":
-    # Crear un objeto cProfile
-    profiler = cProfile.Profile()
 
-    # Iniciar el perfilado
-    profiler.enable()
-
-    # Ejecutar el código a perfilar
-    main()
-
-    # Detener el perfilado
-    profiler.disable()
-
-    # Imprimir estadísticas
-    profiler.print_stats(sort='cumulative')
+main()
