@@ -79,7 +79,7 @@ def main():
         # 4 Instanciar el prestamo
         prestamo_usuario = Prestamo(monto, interes, cuotas)
         # 5 Generar el reporte
-        prestamo_usuario.generar_reporte('Préstamo')
+        prestamo_usuario.generar_reporte('Préstamo.csv')
         # 6 Imprimir informacion, monto, tasa, cuotas.
         print(f'Informacion:\nMonto: {prestamo_usuario.monto_prestamo}\
               \nTasa de interes anual: {prestamo_usuario.tasa_interes_anual}\
