@@ -2,8 +2,13 @@ from Practica1_CrearDataFrame import DatosCsv
 
 
 def main():
-    datos = DatosCsv("MER_T01_09.csv")
-    print(datos)
+    try:
+        datos = DatosCsv("MER_T01_09.csv")
+        datos.limpiarDatos()
+    except FileNotFoundError:
+        print("Error: el archivo csv enviado para analizar no existe.")
+    except Exception as e:
+        print(f"A ocurrido un error: {e}")
 
 
 main()
