@@ -34,11 +34,19 @@ class DatosCsv:
         promedio_valores = estadisticas_valores['mean']
         valor_minimo = estadisticas_valores['min']
         valor_maximo = estadisticas_valores['max']
+        desviacion_estandar = estadisticas_valores['std']
+        
+        Q1 = estadisticas_valores['25%']
+        Q3 = estadisticas_valores['75%']
+        IQR = Q3 - Q1
+        valores_atipicos = self.datos_por_auto[(self.datos_por_auto['Value'] < (Q1 - 1.5 * IQR)) | (self.datos_por_auto['Value'] > (Q3 + 1.5 * IQR))]
         print(f"Datos sobre vehiculos electricos registrados en EEUU:\
               \nCantidad de datos relacionados a autos electricos: {cantidad_valores}\
               \nPromedio de vehículos totales registrados: {round(promedio_valores)}\
               \nValor analizado con menos registro vehículos: {round(valor_minimo)}\
-              \nValor analizado con más registro vehículos: {round(valor_maximo)}")
+              \nValor analizado con más registro vehículos: {round(valor_maximo)}\
+              \nDesviacion estandar de los valores: {round(desviacion_estandar)}\
+              \nAlgunos valores atipicos:\n{valores_atipicos['Value'].to_string(index=False)}")
 
     def generador_informe(self, fecha):
         for _, filas in self.datos_por_auto.iterrows():
