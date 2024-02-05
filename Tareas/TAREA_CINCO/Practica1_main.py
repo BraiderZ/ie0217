@@ -9,6 +9,8 @@ def main():
         datos.informe_detallado_fecha()
         for i in datos:
             print(i)
+        datos.iterador_dataframe_electricos()
+        datos.iterador_dataframe_totales()
     except FileNotFoundError:
         print("Error: el archivo csv enviado para analizar no existe.")
     except Exception as e:

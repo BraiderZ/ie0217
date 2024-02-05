@@ -73,3 +73,48 @@ class DatosCsv:
             return [self.fecha - 100, autos_totales, autos_totales * autos_electricos]
         else:
             raise StopIteration
+    
+    def generador_porcentaje_auto(self, tipo_auto, primer_registro, ultimo_registro):
+        for i in range(len(tipo_auto)):
+            porcentaje = ((ultimo_registro[i] - primer_registro[i])/primer_registro[i]) * 100
+            yield porcentaje
+
+    def iterador_dataframe_electricos(self):
+        tipo_auto = []
+        primer_registro = []
+        ultimo_registro = []
+        porcentaje_auto = []
+
+        for _, filas in self.datos_por_auto.iterrows():
+            if filas.iloc[0] not in tipo_auto:
+                tipo_auto.append(filas.iloc[0])
+                primer_registro.append(filas.iloc[2])
+            elif filas.iloc[1] == 202213:
+                ultimo_registro.append(filas.iloc[2])
+
+        for porcentaje in self.generador_porcentaje_auto(tipo_auto, primer_registro, ultimo_registro):
+            porcentaje_auto.append(porcentaje)
+
+        print(porcentaje_auto)
+
+    def generador_porcentaje_fecha(self, fechas, cantidades):
+        for i in range(len(fechas)):
+            if i == 0:
+                yield 0
+            else:
+                porcentaje = ((cantidades[i] - cantidades[i - 1])/cantidades[i - 1]) * 100
+                yield porcentaje
+
+    def iterador_dataframe_totales(self):
+        fechas = []
+        cantidades = []
+        porcentaje_total = []
+        for _, filas in self.datos_totales.iterrows():
+            if filas.iloc[1] not in fechas:
+                fechas.append(filas.iloc[1])
+                cantidades.append(filas.iloc[2])
+
+        for porcentaje in self.generador_porcentaje_fecha(fechas, cantidades):
+            porcentaje_total.append(porcentaje)
+
+        print(porcentaje_total)
