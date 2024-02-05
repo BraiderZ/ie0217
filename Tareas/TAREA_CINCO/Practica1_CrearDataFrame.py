@@ -53,8 +53,15 @@ class DatosCsv:
             for registro in self.generador_informe(fecha):
                 fechas[fecha] += round(registro)
 
-        print("---Cantidad de vehículos electricos registrados fecha---")
-        ano = 2012
-        for fecha in fechas:
-            print(f"{ano}/13: {fechas[fecha]}")
-            ano += 1
+    def __iter__(self):
+        self.fecha = 201213
+        return self
+
+    def __next__(self):
+        if self.fecha <= 202213:
+            autos_totales = self.datos_totales[(self.datos_totales["MSN"] == "LDVHNUS") & (self.datos_totales["YYYYMM"] == self.fecha)]["Value"].values[0]
+            autos_electricos = self.datos_totales[(self.datos_totales["MSN"] == "ELVHSUS") & (self.datos_totales["YYYYMM"] == self.fecha)]["Value"].values[0]
+            self.fecha += 100
+            return [self.fecha - 100, autos_totales, autos_totales * autos_electricos]
+        else:
+            raise StopIteration
