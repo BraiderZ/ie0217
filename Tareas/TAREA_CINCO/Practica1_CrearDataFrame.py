@@ -71,7 +71,7 @@ class DatosCsv:
             autos_totales = self.datos_totales[(self.datos_totales["MSN"] == "LDVHNUS") & (self.datos_totales["YYYYMM"] == self.fecha)]["Value"].values[0]
             autos_electricos = self.datos_totales[(self.datos_totales["MSN"] == "ELVHSUS") & (self.datos_totales["YYYYMM"] == self.fecha)]["Value"].values[0]
             self.fecha += 100
-            return [self.fecha - 100, autos_totales, autos_totales * autos_electricos]
+            return [self.fecha - 100, autos_totales, autos_totales * (autos_electricos/100)]
         else:
             raise StopIteration
     
