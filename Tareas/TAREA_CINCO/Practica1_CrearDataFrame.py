@@ -60,6 +60,7 @@ class DatosCsv:
         for fecha in fechas:
             for registro in self.generador_informe(fecha):
                 fechas[fecha] += round(registro)
+        return fechas
 
     def __iter__(self):
         self.fecha = 201213
@@ -89,13 +90,14 @@ class DatosCsv:
             if filas.iloc[0] not in tipo_auto:
                 tipo_auto.append(filas.iloc[0])
                 primer_registro.append(filas.iloc[2])
-            elif filas.iloc[1] == 202213:
+            
+            if filas.iloc[1] == 202213:
                 ultimo_registro.append(filas.iloc[2])
 
         for porcentaje in self.generador_porcentaje_auto(tipo_auto, primer_registro, ultimo_registro):
             porcentaje_auto.append(porcentaje)
-
-        print(porcentaje_auto)
+        
+        return tipo_auto, porcentaje_auto
 
     def generador_porcentaje_fecha(self, fechas, cantidades):
         for i in range(len(fechas)):
@@ -117,4 +119,4 @@ class DatosCsv:
         for porcentaje in self.generador_porcentaje_fecha(fechas, cantidades):
             porcentaje_total.append(porcentaje)
 
-        print(porcentaje_total)
+        return fechas, porcentaje_total
