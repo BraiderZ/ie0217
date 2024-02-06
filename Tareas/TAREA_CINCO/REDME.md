@@ -5,11 +5,24 @@
 
 # Instrucciones para ejecutar el programa
 
+    Este trabajo consiste en dos programas. El primero toma una base de datos establecida e imprimem, tanto en la terminal como en gráficas, los resultado obtenidos sobre el análisis realizado. El segundo programa realiza diferentes operaciones a las calificaciones de 5 estudiantes en 5 materias. Los resultados de las operaciones se impriemen en la terminal.
+
 ## Requisitos previos
 
-## Compilación
+- Asegúrate de tener un entorno de desarrollo C++ instalado, como [MinGW](http://mingw.org/).
+- Clona o descarga el repositorio en tu máquina local.
 
-## Diferentes opciones del menú
+## Ejecución
+
+1. Abre una terminal o un símbolo del sistema.
+2. Navega al directorio donde se encuentra el Makefile y los archivos fuente.
+3. Ejecuta el siguiente comando si quieres ejecutar el programa:
+
+   ```bash
+   mingw32-make
+
+4. De manera automática se ejecutarán en orden los dos programas de la tarea.
+5. Cabe mencionar que al momento de que se empiecen a imprimir las gráficas de la primera tarea, se deben cerrar para continuar a la próxima gráfica o terminar el programa y que se ejecute le siguiente.
 
 # Parte Teórica
 
@@ -118,6 +131,8 @@ Depende de cuál sea nuestro objetivo con los valores que queremos tomar de los 
 
 Para analizar los resultados, nos enfocaremos tanto es las gráficas como el análisis exhaustivo que se imprime al inicio del programa.
 
+Cabe mencionar que por medio de `sleep` existe un delay entre los valores que se imprimen en el anáisis exhautivo y las gráficas para mejorar la visulización de esa primer parte.
+
 ## Análisis exhaustivo
 
 Este esta enfocado en los datos relacionado a los diferentes tipos de vehículos eléctricos con la cantidad de registro anual de cada uno. Vemos que son 44 datos totales, lo cual, es muy pequeño en comparación con otros conjuntos de datos. Sin embargo, en sus pocas líneas se encuentra información de gran relevancia sobre el aumento de los autos que buscan ayudar al planeta al no utilizar combustibles fósiles.
@@ -154,7 +169,7 @@ Estos porcentajes reflejan datos aún más claros de el impacto de los autos el�
 
 ![Gráfica 4](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CINCO/Gr%C3%A1fica4.png)
 
-Finalmente, otro dato de gran relevancia es el porcentaje por año que han aumentado el registro de autos totales. Curiosamente, se observa que sus aumentos no superan el 4% y en un año hasta se observa que hay una disminución en la cantidad de autos registrados.
+Finalmente, otro dato de gran relevancia es el porcentaje por año que han aumentado el registro de autos totales. Curiosamente, se observa que sus aumentos no superan el 4% y en un año hasta se observa que hay una disminución en la cantidad de autos registrados. Otro detalle va relaciona a que el porcentaje del primer año es 0% debido a que no se poseen datos antes de esta fecha.
 
 Cabe destacar que, aunque puedan parecer valores muy pequeños, hay que recordar la gran cantidad de autos totales que existen en Estados Unidos y que a diferencia de los autos eléctricos, el resto de autos han existido desde mediados del siglos XIX.
 
