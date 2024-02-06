@@ -1,16 +1,17 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
+import Practica1_Generadores as generadores
 
 
 class Graficas:
 
-    def graficaFechasCantidadAutos(self, libreria):
+    def graficaFechasCantidadAutos(libreria):
         fechas = []
         cantidad = []
-        for fecha in libreria:
-            fecha_sin_mes = int((fecha - 13)/100)
-            fechas.append(fecha_sin_mes)
-            cantidad.append(libreria[fecha])
+        for fecha, valores in generadores.grafica1(libreria):
+            fechas.append(fecha)
+            cantidad.append(valores)
+
         plt.plot(fechas, cantidad, color='green', linestyle='--', marker='o')
 
         plt.xlabel('Años del registro')
@@ -22,10 +23,10 @@ class Graficas:
         fechas = []
         autos_totales = []
         autos_electricos = []
-        for i in range(len(autos_totales_electricos)):
-            fechas.append(int((autos_totales_electricos[i][0] - 13)/100))
-            autos_totales.append(autos_totales_electricos[i][1] * 1000)
-            autos_electricos.append(autos_totales_electricos[i][2] * 1000)
+        for fecha, fecha_total, fecha_electricos in generadores.grafica2(autos_totales_electricos):
+            fechas.append(fecha)
+            autos_totales.append(fecha_total)
+            autos_electricos.append(fecha_electricos)
 
         plt.bar(fechas, autos_totales, label='Resgistro total de vehículos')
         plt.bar(fechas, autos_electricos, label='Registro de vehículos eléctricos')

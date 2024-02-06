@@ -1,6 +1,7 @@
 from Practica1_CrearDataFrame import DatosCsv
 from Practica1_Graficas import Graficas
 
+
 def main():
     try:
         datos = DatosCsv("MER_T01_09.csv")
