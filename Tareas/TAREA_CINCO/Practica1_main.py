@@ -1,5 +1,6 @@
 from Practica1_CrearDataFrame import DatosCsv
 from Practica1_Graficas import Graficas
+from time import sleep
 
 
 def main():
@@ -8,6 +9,8 @@ def main():
         graficas = Graficas
         datos.limpiarDatos()
         datos.analisisExhaustivo()
+        print("Creando las graficas...")
+        sleep(5)
 
         diccionario_informe = datos.informe_detallado_fecha()
         graficas.graficaFechasCantidadAutos(diccionario_informe)

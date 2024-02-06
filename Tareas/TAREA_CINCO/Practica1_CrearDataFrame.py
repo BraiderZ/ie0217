@@ -25,7 +25,7 @@ class DatosCsv:
         self.datos_totales = self.datos[self.datos["MSN"].isin(["LDVHNUS", "ELVHSUS"])]
 
     def multiplicarValores(self):
-        self.datos_por_auto['Value'] *= 1000
+        self.datos_por_auto.loc[:, 'Value'] *= 1000
 
     def analisisExhaustivo(self):
         descripcion = self.datos_por_auto.describe()
