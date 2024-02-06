@@ -1,8 +1,37 @@
 import numpy as np
 import pandas as pd
+"""
+Practica2_Calificaciones.py
+
+Funciones encargadas de la parte práctica 2.
+
+
+@license:
+Copyright 2024 [Luis José Brenes Campos]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+"""
 
 
 def crearMatrizMateriasNombres():
+    """
+    Crea una matriz 5x5 con valores aleatorios para asignar calificaiones
+    a 5 estudiantes.
+
+    Crea la lista de los 5 estudiantes y de las 5 materias.
+
+    Retorna las 3 variables creadas.
+    """
     matriz_asignaturas = np.round(np.random.uniform(0, 101, size=(5, 5)), 2)
     nombres = ['Luis', 'Esteban', 'Veronica', 'Arnold', 'Jhonny']
     materias = ['Calculo 3', 'Circuitos Digitales', 'Fisica 3',
@@ -11,6 +40,15 @@ def crearMatrizMateriasNombres():
 
 
 def imprimirDatos(matriz_asignaturas, estudiantes, materias):
+    """
+    Args:
+        matriz_asignaturas(lista): matriz 5x5 con las calificaciones
+        de los estudiantes.
+        estudiantes: nombres de los estudiantes.
+        materias: materias de cada estudiante.
+
+    Toma los datos y crea un DataFrame para imprimirlos.
+    """
     df_datos = pd.DataFrame(
         {
             'Estudiantes': estudiantes,
@@ -27,7 +65,21 @@ def imprimirDatos(matriz_asignaturas, estudiantes, materias):
 
 
 def calculoPromedios(matriz_asignaturas, estudiantes, materias):
+    """
+    Args:
+        matriz_asignaturas(lista): matriz 5x5 con las calificaciones
+        de los estudiantes.
+        estudiantes: nombres de los estudiantes.
+        materias: materias de cada estudiante.
 
+    Toma los datos por medio de un loop calcula el promedio de calificaciones
+    por estudiante(promedio de filas) y por asignatura (promedio de columnas).
+
+    Crea dos DataFrame, uno para los promedios de los estudiantes y otro
+    para las asignaturas.
+
+    Imprime los DataFrames.
+    """
     promedios_estudiantes = []
     promedios_materias = []
     for i in range(len(matriz_asignaturas)):
@@ -58,6 +110,16 @@ def calculoPromedios(matriz_asignaturas, estudiantes, materias):
 
 
 def calificacionMaxima(matriz_asignaturas, estudiantes):
+    """
+    Args:
+        matriz_asignaturas(lista): matriz 5x5 con las calificaciones
+        de los estudiantes.
+        estudiantes: nombres de los estudiantes.
+
+    Por medio de un loop, guarda la calificación máxima de cada estudiante.
+
+    Imprime los datos obtenidos después de crear un DataFrame.
+    """
     calificacion_maxima = []
 
     for i in range(len(matriz_asignaturas)):
@@ -76,6 +138,16 @@ def calificacionMaxima(matriz_asignaturas, estudiantes):
 
 
 def sumaTotalMaterias(matriz_asignaturas, materias):
+    """
+    Args:
+        matriz_asignaturas(lista): matriz 5x5 con las calificaciones
+        de los estudiantes.
+        materias: materias de cada estudiante.
+
+    Suma, gracias a un loop, las calificaciones de cada asignatura.
+
+    Cread un DataFrame con los resultados y los imprime.
+    """
     sumas_materias = []
 
     for i in range(len(matriz_asignaturas)):
@@ -94,6 +166,9 @@ def sumaTotalMaterias(matriz_asignaturas, materias):
 
 
 def main():
+    """
+    Invoca las diferentes funciones.
+    """
     matriz_asignaturas, estudiantes, materias = crearMatrizMateriasNombres()
     imprimirDatos(matriz_asignaturas, estudiantes, materias)
     calculoPromedios(matriz_asignaturas, estudiantes, materias)

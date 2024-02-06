@@ -1,11 +1,38 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import Practica1_Generadores as generadores
+"""
+Practica1_Graficas.py
 
+Clase encargada de crear las diferentes gráficas.
+
+
+@license:
+Copyright 2024 [Luis José Brenes Campos]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+"""
 
 class Graficas:
 
     def graficaFechasCantidadAutos(libreria):
+        """
+        Args:
+            liberia(diccionario): posee como claves las fechas y como valor la cantidad de registros de auto.
+
+        Invoca un generador para obtener los datos de la gráfica.
+        Una vez almacenados los datos, crea una gráfica lineal.
+        """
         fechas = []
         cantidad = []
         for fecha, valores in generadores.grafica1(libreria):
@@ -20,6 +47,14 @@ class Graficas:
         plt.show()
 
     def graficaAutosTotalesAutosElectricos(autos_totales_electricos):
+        """
+        Args:
+            autos_totales_electricos: matriz con fechas y registros de diferentes tipos
+
+        Invoca un generador para obtener los datos de la gráfica.
+        Una vez almacenados los datos, crea una gráfica de barras.
+        Esta gráfica se compone de dos datos para observar el contraste.
+        """
         fechas = []
         autos_totales = []
         autos_electricos = []
@@ -39,6 +74,14 @@ class Graficas:
         plt.show()
 
     def graficasAumentoPorcentualAutos(tipo_auto, porcentaje_auto):
+        """
+        Args:
+            tipo_auto(lista): diferentes tipos de autos eléctricos.
+            porcentaje_auto(lista): porcentaje del aumento de registros de cada tipo de auto
+
+        Crea una gráfica horizontal con el porcentaje que ha aumentado
+        en registros cada tipo de auto en los últimos 11 años.
+        """
         sns.set(style="whitegrid")
 
         plt.figure(figsize=(10, 6))
@@ -51,6 +94,14 @@ class Graficas:
         plt.show()
 
     def graficasFechaPorcentajeAutos(fechas, aumento_porcentaje):
+        """
+        Args:
+            fechas(lista): fechas de los diferentes registros.
+            aumento_porcentaje(lista): porcentaje que ha aumentado en cada año los resgistros.
+
+        Crea una de dispersión y una lineal para mejorar la visualización.
+        Releja como la cantidad de autos totales ha aumentado en los registros por año.
+        """
         for i in range(len(fechas)):
             fechas[i] = int(fechas[i] - 13)/100
         plt.figure(figsize=(10, 6))
