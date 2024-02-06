@@ -20,6 +20,7 @@ def main():
         graficas.graficasAumentoPorcentualAutos(tipo_auto, porcentaje_auto)
 
         fechas, aumento_porcentaje = datos.iterador_dataframe_totales()
+        graficas.graficasFechaPorcentajeAutos(fechas, aumento_porcentaje)
 
     except FileNotFoundError:
         print("Error: el archivo csv enviado para analizar no existe.")
