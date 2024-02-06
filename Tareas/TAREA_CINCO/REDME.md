@@ -113,6 +113,59 @@ Por otro lado, iloc realiza el mismo proceso pero basado en los índices. Cada f
 
 Depende de cuál sea nuestro objetivo con los valores que queremos tomar de los datos, elgir entre loc e iloc.
 
+
+# Parte Práctica 1 --- Interpretación de Resultados
+
+Para analizar los resultados, nos enfocaremos tanto es las gráficas como el análisis exhaustivo que se imprime al inicio del programa.
+
+## Análisis exhaustivo
+
+Este esta enfocado en los datos relacionado a los diferentes tipos de vehículos eléctricos con la cantidad de registro anual de cada uno. Vemos que son 44 datos totales, lo cual, es muy pequeño en comparación con otros conjuntos de datos. Sin embargo, en sus pocas líneas se encuentra información de gran relevancia sobre el aumento de los autos que buscan ayudar al planeta al no utilizar combustibles fósiles.
+
+En general, resulta curioso observar que aunque en promedio es más de medio millón de autos, se encuentra dentro de los valores típicos el valor mínimo que es 127 registros, mientras que los registros de mayor tamaño, sí son valores atípicos. Esto refleja que los autos eléctricos aún estan en proceso de aumento y que han crecido en gran medida durante los últimos años.
+
+Estos aspectos los veremos más a detalle en las diferentes gráficas.
+
+## Gráfica 1
+
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CINCO/Gr%C3%A1fica1.png)
+
+El gráfico 1 nos ayuda a conocer la cantidad total de autos eléctricos registrados en los últimos 11 años. Este se ve en aumento y nos refleja que, el auge de los autos sí ha tenido un impacto en la cantidad de registros, pasando un poco más de 100000 registros a más de 6 millones. 
+
+Aunque no existe un aumento más allá del lineal, sí toma una pendiente más marcada apartir del 2020. Esto no deja en claro, nuevamente, que los auto eléctricos han tomado más importancia conforme pasan los años.
+
+## Gráfica 2
+
+![Gráfica 2](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CINCO/Gr%C3%A1fica2.png)
+
+En este segundo año podemos observar tanto la cantidad total de vehículos registrados en general como los registros de vehículos electricos. Este segundo dato fue tomado de los porcentajes que se proporcionaban, lo cual, ocasiona una diferencia de casi del doble con los datos obtenidos en la primera gráfica. La posible razón de esta discrepencia puede ser en la hora de que la gráfica 1 también toma en cuenta más tipos de autos que son catalogados como eléctricos (hídridos, baterías de hidrógeno), aspecto que posiblemente se deje de lado en el porcentaje proporcionado.
+
+Aún si se tomara en cuenta esta diferencia, sí podemos observar que los autos eléctricos son tan solo una pequeña parte de la cantidad total de autos que existen en Estados Unidos. Mientras que los autos registrados totales en el país son más de 250 millones, tan solo 6 eléctricos. En otras palabras, existe un gran camino por recorrer para poder conseguir que los combustibles fósiles no sean parte importante en los medios de transporte en esta potencia mundial.
+
+## Gráfica 3
+
+![Gráfica 3](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CINCO/Gr%C3%A1fica3.png)
+
+Otra manera de observar el aumento de los autos eléctricos que se han registrado, es por medio de conocer su crecimiento en porcentajes. En la gráfica no se especifica los tipos de autos fuera de su código, esto debido a que no se busca un enfoque en conocer cuál ha tenido un mejor aumento, sino en compar el aumento propio de cada tipo de vehículo.
+
+Estos porcentajes reflejan datos aún más claros de el impacto de los autos eléctricos en los últimos 11 años. Existen datos en los que se puede observar que el aumento ha sido en más de 70 o inclusive 100 veces la cantidad de autos registrados. Por lo tanto, aunque su aumento no ha sido muy significativo en la cantidad de autos totales, sí dentro de su propio ámbito.
+
+## Gráfica 4
+
+![Gráfica 4](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_CINCO/Gr%C3%A1fica4.png)
+
+Finalmente, otro dato de gran relevancia es el porcentaje por año que han aumentado el registro de autos totales. Curiosamente, se observa que sus aumentos no superan el 4% y en un año hasta se observa que hay una disminución en la cantidad de autos registrados.
+
+Cabe destacar que, aunque puedan parecer valores muy pequeños, hay que recordar la gran cantidad de autos totales que existen en Estados Unidos y que a diferencia de los autos eléctricos, el resto de autos han existido desde mediados del siglos XIX.
+
+Asimismo, un aspecto a tener en cuenta que se observa de manera porcentual va relacionado a que si el aumento anual sigue siendo el mismo los años siguientes y la cantidad de registros de autos eléctricos sigue teniendo porcentajes tan altos, en un parte de años la cantidad de autos eléctricos sí tendrán una parte más amplia de la cantidad de autos totales.
+
+## Importancia de los datos
+
+Finalmente, es importata menciona que, los datos analizamos para esta tarea no solo cumplen un papel en la compresión de los diferentes métodos de graficación que nos proporciona Python. Poder graficar estos resultados no ayuda a reconocer cómo un aspecto tan importante como lo es la búsqueda de energías limpias para diminuir nuestra huella de carbono, ha impactado en los últimos años. Aunque los esfuerzos se ven reflejados en los datos, también las gráficas nos ayudan a darnos cuenta que el proceso de este cambio hacia un bien en el ambiente es más lento de lo que podría esperarse.
+
+Crear programas como el de esta tarea son vitales si queremos conocer cómo las estrategias llevadas a cabo estan teniendo verdadero valor. Por ello, es importante que este proceso de análisis se realice mínimo una vez al año y mejorando cada vez más las diferentes gráficas que se propongan para identificar los puntos débiles.
+
 # Blibiografía
 
 1. Dr. Xabi, Manejo de Valores Faltantes (Missing Values) en Pandas (Google Colab). [Youtube](https://www.youtube.com/watch?v=U4F27P_9l78).
