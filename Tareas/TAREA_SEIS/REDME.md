@@ -101,27 +101,86 @@ Un paquete en Python es un conjunto de módulos organizados en diferentes direct
 
 **2. ¿Cuál es la función del archivo __init__.py dentro de un paquete de Python?**
 
-El archivo llamado `__init__.py`, es el encargado de indicarle a Python que quien lo posea es un paquete. Este achivo puede estar vacío, sin embargo, es común que se agregue dentro del funcionamiento inicial del paquete.
+El archivo llamado `__init__.py`, es el encargado de indicarle a Python que quien lo posea es un paquete. Si existen subpaquetes dentro de un paquete, también debe poseer el `__init__.py`. Este achivo puede estar vacío, sin embargo, es común que se agregue dentro del funcionamiento inicial del paquete.
 
 **3. ¿Cómo se importa un módulo o función desde un paquete en Python?**
 
+La importación de un módulo y función desde un paquete es muy parecido a como se importa una función de un módulo. De igual manera, se utiliza `from` e `import` para los proceso.
+
+Para importa un módulo se realiza de la siguiente manera:
+
+- `import NombrePaquete.NombreMódulo` y se utiliza `NombrePaquete.NombreMódulo.Nombre_Función()` para invocar una función.
+- `from NombrePaquete import NombreMódulo` si queremos que solo se importe el módulo.
+
+Para importa una función:
+
+- `from NombrePaquete.NombreMódulo import NombreFunción` y se utiliza su nombre para invocarlo.
+
 **4. ¿Qué es la variable __all__ en el archivo __init__.py y cuál es su propósito?**
 
+Existeb casos en donde se busca que el archivo `__inir__.py`, posea el funcionamiento inicial del paquete. También puede declarase un avairable especial llamada `__all__`. Esta variable se encarga de administrar cuáles módulos van a ser visibles para la persona que importe un paquete. [2]
+
+Esta variable cunciona cuando se utiliza `from NombrePaquete import *`, lo que le da al usuario la opción de usar módulos y símbolos específicos del paquete. Lo que ayuda a regular el acceso de los usuario a un paquete.
+
 **5. ¿Cuál es la ventaja de organizar el código en paquetes y módulos en Python?**
+
+Crear un programa con diseño modular, o sea, separado en módulos u organizar ciertas funciones en paquetes, resulta poseer grandes ventajas. Estas se ven aún más resaltadas en trabajos de múltiples personas o proyectos de grande extensión.
+
+En primera instancia, organizar el código de esta manera ayuda a la organización del programa. Así como las funciones buscan separar funcionalidades en trabajos más pequeños, los módulos nos ayudan con el mismo pbjetivo pero a nivel más grande. Si se necesita realizar modificaciones al código, no es necesario tener la duda de que los cambios de una clase o función pueda ocasionar otros errores, ya que, estos en la mayoría de casos quedarían encpasulados en el módulo. Además, agrupar ciertas funcionalidades que poseen caracterísitcas parecidas en módulos específicos, mejora el control y entendimiento del código.
+
+En segunda instancia, si nos referimos más aprofundidad sobre el trabajo en equipo, resulta ser una opción muy impoortante a tener en cuenta. Cada miembro del equipo puede trabajar en sus propios módulos segñun ciertas normas a seguir. Con ello, una vez terminadas las diferentes funcionalidades, se puede unir el programa sin la necesidad de todos trabajar en un mismo archivpo, lo cual, podría ocasionar problemas con el código de los compañeros de trabajo.
+
+En última instancia, los paquetes y módulos también son buenas herramientas para la reutilización de código. Si una de las funcionalidades se  encuentra dentro de un módulo de un paquete bien organizado, puede llegar a ser usado en programas futuros y ahorrar tiempo. Esta es la lógica de las propias biblitecas a las que accedemos. En pocas palabras, un paquete fomenta un código de más de un uso.
 
 ## Python HTTP y Servicios Web (API):
 
 **1. ¿Qué es una API y cuál es su función en el contexto de los servicios web?**
 
+Son un conjunto de reglas que permiten la comunicación de diferentes aplicaciones de softwares. Esta comunicación es realizada por la web, lo cual, hace que cummpla una función fundamental en el contexto de los servicios web. 
+
+Gracias a ello se evita que haya un contacto interno con las bases de datos o funcionamiento interno de otras aplicaciones. Se proporciona una intefaz para solicitar ciertas acciones como lo pueden ser recibir datos, expotar datos, actualizar datos, etc.
+
+
 **2. ¿Cuál es la diferencia entre una API RESTful y una API SOAP?**
+
+Cada vez que se realiza una aplicación, las condiciones de la manera en la que fue creada son muy únicas. Esto dificulta a la hora de intercambiar datos entre apliaciones tan diversas. REST y SOAP surgieron como solución al problema. Ambas poseen similutedes como la posibilidad de crear API, basarse en el uso de reglas y usar HTTP. [3]
+
+Sin embargo, es importante tener en cuenta las diferencias entre ambos mecanismos. Por un lado, SOAP es un mecanismo rídgio que establece algunos estándares a la hora de intercambiar datos. Estos se basan en una parte en mantener seguridad en el proceso. Además, se debe crear un sobre Soap que modifica en contenido del HTTP en una solicitud SOAP. Las respuestas siempre son dadas en documentos XML.
+
+Por otro lado, Rest es un sistema más flexible que impone 6 reglas que se deben seguir para realizar una solicitud. Estas solicitudes se dan por medio de verbos HTTP como get. Aunque en general las respuestas suelen estar en JSON, pueden ser en otro formato.
+
+En pocas palabras, SOAP es un mecanismo más rídigo que REST.
 
 **3. Describa los pasos básicos para consumir una API utilizando Python.**
 
+- Importar la biblitena `requests`: es importante a la hora de consumir un API, importa la biblioteca que nos permite realizar el procedimiento. Con ello, al igual que sucede con otras bibliotecas, se nos da la oportunidad de utilizar múltiples funcionalidades, en este caso, para manejar servicios web.
+
+- Realizar la solicitud: por medio de los diferentes verbos, podemos realizar acciones. Por ejemplo, podemos usar `GET` si queremos obtener información de un sitio web o `POST` si queremos enviar algo.
+
+- Manejo de datos: una vez obtenido los datos, los cuales, generalmente se encuentran en formato JSON, debemos darle su correspondiente manejo y proceso según la razón por la que los pedimos.
+
 **4. ¿Qué es la autenticación de API y por qué es importante?**
+
+Consiste en la seguridad que poseen la información de los servicios que se encuentran en la web. Generalmente, estos se realizar por medio del nombre de usuario y una contraseña establecida. Además, se debe verificar los permisos que posee cada usuario para realizar las diferentes solicitudes.
+
+Este proceso es importante, ya que, la información en el internet que no sea segura, es de fácil acceso a cualquier personas. Datos personales, información de empresas y otras aspectos pueden caer en las manos equivocadas si no se procede con una autenticación. Aunado a ello, establecer ciertos márgenes de solicitud ayuda a que solo las personas especializadas, puedan modificar la información y que no realicen modificaciones por un mal manejo de los datos.
 
 **5. ¿Cuál es el papel de los verbos HTTP (GET, POST, PUT, DELETE) en las solicitudes a una API y HTTP?**
 
+Cada verbo HTTP compone un papel fundamental a la hora de compartir información. Dependiendo del verbo utilizado, se indica la acción a realizar en la API. Los verbos mencionado son los más importantes a la hora de este proceso. Las funciones de cada uno son:
+
+- GET: obtener datos.
+- POST: enviar datos.
+- PUT: actualizar datos.
+- DELETE: eliminar datos.
+
+De manera esta manera sencilla, se establece la acción a realizar a la hora de comunicar las aplicaciones. Cabe destacar que, el uso literal de verbos en inglés, también mejor la comprensión de lo que sucede en el proceso de solicutd y respuesta. 
+
 # Blibiografía
 
-1. Nombre de la persona u organizacion, Titulo. [Nombre de la pagina](url).
+1. Bi Solutions, ¿Qué son los datos estructurados y no estructurados?. [Youtube](https://www.youtube.com/watch?v=iSm1gmDiH6Q).
+
+2. DelftStack, __all__ en Python. [DelftStack](https://www.delftstack.com/es/howto/python/_all_-variable-in-python/).
+
+3. AWS, ¿Cuál es la diferencia entre SOAP y REST?. [AWS](https://aws.amazon.com/es/compare/the-difference-between-soap-rest/#:~:text=La%20API%20de%20REST%20expone%20los%20datos.&text=SOAP%20es%20independiente%20y%20puede,REST%20solo%20funciona%20con%20HTTPS.&text=SOAP%20solo%20admite%20el%20intercambio%20de%20datos%20XML).
 
