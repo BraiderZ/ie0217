@@ -1,6 +1,7 @@
 from request import obtenerDatos
 from datos_pandas import DatosPandas
 from regresion import Regresiones
+from clustering import Clustering
 
 
 def main():
@@ -13,6 +14,8 @@ def main():
     regresiones.datosRegresionNoLineal1()
     regresiones.datosRegresionLineal2()
     regresiones.datosRegresionNoLineal2()
+    clustering = Clustering(datos)
+    clustering.clusterinKMeans()
 
 
 main()
