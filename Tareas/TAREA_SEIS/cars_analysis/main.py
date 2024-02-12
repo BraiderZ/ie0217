@@ -9,8 +9,10 @@ def main():
     manejo_datos.limpezaDatos()
     datos = manejo_datos.getDatos()
     regresiones = Regresiones(datos)
-    regresiones.datosRegresion1_lineal()
-    regresiones.datosRegresion2_lineal()
+    regresiones.datosRegresionLineal1()
+    regresiones.datosRegresionNoLineal1()
+    regresiones.datosRegresionLineal2()
+    regresiones.datosRegresionNoLineal2()
 
 
 main()
