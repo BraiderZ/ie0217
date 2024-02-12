@@ -10,6 +10,7 @@ def main():
     datos = manejo_datos.getDatos()
     regresiones = Regresiones(datos)
     regresiones.datosRegresion1_lineal()
+    regresiones.datosRegresion2_lineal()
 
 
 main()
