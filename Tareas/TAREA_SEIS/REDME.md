@@ -5,16 +5,30 @@
 
 # Instrucciones para ejecutar el programa
 
+Este programa crea regresiones y clustering acerca de vehículos que se encuentran a la vente. Además, imprime las gráficas y el rendimiento de cada proceso.
 
 ## Requisitos previos
 
+- Asegúrate de tener un entorno de desarrollo Python instalado, como [MinGW](http://mingw.org/).
+- Clona o descarga el repositorio en tu máquina local.
 
-## Compilación
+## Ejecución
 
-## Diferentes opciones del menú
+1. Abre una terminal o un símbolo del sistema.
+2. Navega al directorio donde se encuentra el Makefile, el kaggle.json y el paquete.
+4. Ejecute el siguiente comando para agregar el Json al directorio correcto:
 
-### Salir
+    ```bash
+    move kaggle.json C:\Users\<TuUsuario>\.kaggle
 
+3. Ejecuta el siguiente comando si quieres ejecutar el programa:
+
+   ```bash
+   mingw32-make
+
+4. De manera automática se ejecutarán el paquete.
+5. Las gráficas empezarán a imprimirse en un orden específico. Cierre cada gráfica para avanzar a la siguiente.
+6. Cabe mencionar que el proceso de clustering es grande y dichas gráficas tardarán un rato en ser mostradas.
 
 # Parte Teórica
 
@@ -217,7 +231,7 @@ Nuevamente, tenemos el proble de que al ser pocos datos, la regresión no lineal
 
 ## Redimiento de las Regresiones
 
-Aquí podemos observar otros detalles sobre el rendimiento de las regresiones.
+Aquí podemos observar otros detalles sobre el rendimiento de las regresiones. Se puede observar como el MAE tiene mejores resultados en comparación al MSE.
 
 ![Captura 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Rendimiento.png)
 
