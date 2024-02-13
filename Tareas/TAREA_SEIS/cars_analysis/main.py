@@ -15,7 +15,8 @@ def main():
     regresiones.datosRegresionLineal2()
     regresiones.datosRegresionNoLineal2()
     clustering = Clustering(datos)
-    clustering.clusterinKMeans1()
+    clustering.clusteringKMeans1()
+    clustering.clusteringKMeans2()
 
 
 main()
