@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
@@ -91,15 +92,15 @@ class Regresiones():
         fechas = self.regresion1.index.values.reshape(-1, 1)
         precios = self.regresion1.values.reshape(-1, 1)
 
-        fechas_train, fechas_test, precio_train, precio_test = train_test_split(
-            fechas, precios, test_size=0.5, random_state=121)
+        fechas_poly = PolynomialFeatures(degree=2).fit_transform(fechas)
 
-        grado_polinomico = 2
-        modelo_polinomico = make_pipeline(
-            PolynomialFeatures(grado_polinomico), LinearRegression())
-        modelo_polinomico.fit(fechas_train, precio_train)
-        
-        precios_pred = modelo_polinomico.predict(fechas_test)
+        fechas_train, fechas_test, precios_train, precio_test = train_test_split(
+            fechas_poly, precios, test_size=0.5, random_state=121)
+
+        modelo_polinomio = LinearRegression()
+        modelo_polinomio.fit(fechas_train, precios_train)
+
+        precios_pred = modelo_polinomio.predict(fechas_test)
 
         mae = mean_absolute_error(precio_test, precios_pred)
         mse = mean_squared_error(precio_test, precios_pred)
@@ -109,12 +110,13 @@ class Regresiones():
         print(f'MSE de regresion no lineal 1: {mse:.2f}')
 
         plt.figure(figsize=(10, 6))
-        plt.scatter(fechas_test, precio_test, color="#3498db", label="Datos reales")
-        plt.plot(fechas_test, precios_pred, color='#800000', linewidth=3, label=f'Regresión no lineal (R^2={r2:.2f})')
-        plt.title('Precio promedio de los vehículos según el año')
+        plt.scatter(fechas_test[:, 1], precio_test, color="#3498db", label="Datos reales")
+        sorted_indices = np.argsort(fechas_test[:, 1])
+        plt.plot(fechas_test[:, 1][sorted_indices], precios_pred[sorted_indices], color='#800000', linewidth=3, label=f'Regresión no lineal (R^2={r2:.2f})')
+        plt.title('Kilometraje promedio de los vehículos según el año')
         plt.legend()
         plt.xlabel("Año")
-        plt.ylabel("Precio")
+        plt.ylabel("Kilómetros recorridos")
         plt.show()
 
     def datosRegresionLineal2(self):
@@ -166,25 +168,27 @@ class Regresiones():
         fechas = self.regresion2.index.values.reshape(-1, 1)
         kilometraje = self.regresion2.values.reshape(-1, 1)
 
-        fechas_train, fechas_test, kilometraje_train, kilometraje_test = train_test_split(
-            fechas, kilometraje, test_size=0.5, random_state=121)
+        fechas_poly = PolynomialFeatures(degree=3).fit_transform(fechas)
 
-        grado_polinomico = 2
-        modelo_polinomico = make_pipeline(
-            PolynomialFeatures(grado_polinomico), LinearRegression())
-        modelo_polinomico.fit(fechas_train, kilometraje_train)
-        kilometraje_pred = modelo_polinomico.predict(fechas_test)
+        fechas_train, fechas_test, kilometraje_train, kilometraje_test = train_test_split(
+            fechas_poly, kilometraje, test_size=0.5, random_state=121)
+
+        modelo_polinomio = LinearRegression()
+        modelo_polinomio.fit(fechas_train, kilometraje_train)
+
+        kilometraje_pred = modelo_polinomio.predict(fechas_test)
 
         mae = mean_absolute_error(kilometraje_test, kilometraje_pred)
         mse = mean_squared_error(kilometraje_test, kilometraje_pred)
         r2 = r2_score(kilometraje_test, kilometraje_pred)
 
-        print(f'MAE de regresion no lineal 2: {mae:.2f}')
-        print(f'MSE de regresion no lineal 2: {mse:.2f}')
+        print(f'MAE de regresión no lineal 2: {mae:.2f}')
+        print(f'MSE de regresión no lineal 2: {mse:.2f}')
 
         plt.figure(figsize=(10, 6))
-        plt.scatter(fechas_test, kilometraje_test, color="#00CED1", label="Datos reales")
-        plt.plot(fechas_test, kilometraje_pred, color='purple', linewidth=3, label=f'Regresión no lineal (R^2={r2:.2f})')
+        plt.scatter(fechas_test[:, 1], kilometraje_test, color="#00CED1", label="Datos reales")
+        sorted_indices = np.argsort(fechas_test[:, 1])
+        plt.plot(fechas_test[:, 1][sorted_indices], kilometraje_pred[sorted_indices], color='purple', linewidth=3, label=f'Regresión no lineal (R^2={r2:.2f})')
         plt.title('Kilometraje promedio de los vehículos según el año')
         plt.legend()
         plt.xlabel("Año")
