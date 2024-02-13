@@ -5,15 +5,54 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+"""
+regresion.py
+
+Clase encargada de crear gráficas con regresiones lineales
+y no lineales.
+
+
+@license:
+Copyright 2024 [Luis José Brenes Campos]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+"""
 
 
 class Regresiones():
     def __init__(self, datos):
+        """
+        Args:
+            datos(DataFrame): posee los datos que se obtienen del csv
+
+        Crea un atributo principal para almacenar los datos y dos
+        secundarios que usarán en para las regresiones.
+        """
         self.datos = datos
         self.regresion1 = pd.DataFrame()
         self.regresion2 = pd.DataFrame()
 
     def datosRegresionLineal1(self):
+        """
+        Agrega los datos necesarios al primer atributo para la regresión
+
+        Separa los datos en dos listas y se procede a separar en datos de
+        entrenamiento y de testeo
+
+        Crea la regresión y verifica el rendimiento
+        
+        Imprime el rendimiento y la gráfica
+        """
         self.regresion1 = self.datos.groupby('year')['selling_price'].mean()
 
         fechas = self.regresion1.index.values.reshape(-1, 1)
@@ -44,6 +83,9 @@ class Regresiones():
         plt.show()
 
     def datosRegresionNoLineal1(self):
+        """
+        Mismo proceso pero ahora para regresión no lineal
+        """
         self.regresion1 = self.datos.groupby('year')['selling_price'].mean()
 
         fechas = self.regresion1.index.values.reshape(-1, 1)
@@ -76,6 +118,16 @@ class Regresiones():
         plt.show()
 
     def datosRegresionLineal2(self):
+        """
+        Agrega los datos necesarios al primer atributo para la regresión
+
+        Separa los datos en dos listas y se procede a separar en datos de
+        entrenamiento y de testeo
+
+        Crea la regresión y verifica el rendimiento
+        
+        Imprime el rendimiento y la gráfica
+        """
         self.regresion2 = self.datos.groupby('year')['km_driven'].mean()
 
         fechas = self.regresion2.index.values.reshape(-1, 1)
@@ -106,6 +158,9 @@ class Regresiones():
         plt.show()
 
     def datosRegresionNoLineal2(self):
+        """
+        Mismo proceso pero ahora para regresión no lineal
+        """
         self.regresion2 = self.datos.groupby('year')['km_driven'].mean()
 
         fechas = self.regresion2.index.values.reshape(-1, 1)
