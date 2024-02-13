@@ -182,27 +182,76 @@ Una vez realizada toda la sección lógica del programa, resulta fructuoso valor
 
 ## Regresión Lineal y no Lineal 1
 
+Para la primera regresión se hizo uso del año de cada vehículo y se calculó el precio promedio de los autos. Como se observará en las gráficas, los datos tienden a aumentar de precio conforme pasan los años. Esto tiene un sentido lógico, ya que entre más nuevo es un auto, más probabilidades de que posea una mayor duración. Además, va arraigado a las tendencias modernas de la sociedad que buscan lo último a la moda.
+
+### Lineal
+
 ![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20Lineal%201.png)
-![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20No%20Lineal%201.png)
+
+### No Lineal
+
+![Gráfica 2](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20No%20Lineal%201.png)
+
+Si observamos ambas regresiones, notamos como aunque claramente existe  una diferencia entre la relación de los datos y la predicción, varían de manera no muy llamativa. Aquí, tiene más correlación una gráfica no lineal parabólica, debido a la forma de los datos. Además, vemos como el R^2 llega a tener un valor mucho mejor en el caso de la regresión no lineal.
+
+Cabe destacar que, tanto es la regresión no lineal 1 como en la 2, observamos como ciertas zonas toman una apariencia no tan suave y se muestran más como líneas rectas. Esto no se debe a un problema a la hora de graficar, sino que, a la poca cantidad de datos que poseen las gráficas. Si intentaramos diminuir o aumentar alguna de las dos partes de datos usadas (testeo o entrenamiento) no nos daría gran ayuda y la cantidad elegida para cada una, resulta ser la más adecuada.
 
 ## Regresión Lineal y no Lineal 2
 
-![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20Lineal%202.png)
-![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20No%20Lineal%202.png)
+Para este segundo caso, nuevamente se utilizan los años de los vehículos, pero ahora tomando en cuenta otra caracterísitica: el kilometraje. Lo que se busca es concoer el promedio del kilometraje de cada auto dependiendon del año de fabricación. Como era de esperarse, es común que los autos más viejos posean mayor kilometraje.
+
+Sin embargo, existe 2 aspectos llamativos. En primera instancia, aunque sí se cumple que los autos más viejos poseen mayor kilometraje, esto no es una norma tan común como sucede con los precios, habiendo años posteriores con mayor kilometraje. Este detalle puede ir de la mano con la cantidad de autos que hay por año y del aumento del uso de autos propios en la primera y medidios de la segunda década de los 2000.
+
+En segunda instancia, hay un declive muy marcada a la hora de hablar de autos completamente nuevos. Estos poseen valores muy diferentes a los que podrían verse a la mitad de la gráfica.
+
+### Lineal
+
+![Gráfica 3](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20Lineal%202.png)
+
+### No Lineal
+![Gráfica 4](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20No%20Lineal%202.png)
+
+A diferencia de la primer regresión, observamos aquí una mayor diferencia con respecto a las predicciones. La regresión lineal no solo tiene una gran discrepancia a plena vista con los datos, sino que, su R^2 es demasiado bajo para valorar que sea una buena decisión para estos datos. En contraposición, una regresión no lineal de grado 3, logra acoplarse de muy buena manera a los datos registrados.
+
+Nuevamente, tenemos el proble de que al ser pocos datos, la regresión no lineal tiene secciones donde no es suave, pero que en caso futuro de trabajar con más datos, nos daría como resultado una mejor regresión.
 
 ## Redimiento de las Regresiones
 
-![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Rendimiento.png)
+Aquí podemos observar otros detalles sobre el rendimiento de las regresiones.
+
+![Captura 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Rendimiento.png)
 
 ## Clustering 1
 
-![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/M%C3%A9todo%20del%20Codo.png)
-![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Clustering%201.png)
+El primer clustering de tipo K-Means se basa en analizar la relación entre los precios y el kilometraje. Nuevamente observamos una relación bastante acertada, ya que, los valores de los autos son más bajos si poseen un kilometraje mayor. Esto se debe a que un auto con mayor kilometraje posee más desgaste. Inclusive, se podría decir que, el kilometraje de un auto termina siendo más relevante que el año de creación, ya que, en la gráfica de precios con respecto al año, habían más discrepancias que las que se observan en esta.
+
+### Método del codo
+
+![Gráfica 5](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/M%C3%A9todo%20del%20Codo.png)
+
+Para este primer cluseting se decidió utilizar el método del codo. La gráfica resultante nos dice que, las mejores opciones se encuentran entre 3 a 4 clusters. Finalmente se decidieron 4 debido a haber datos tan alejado, mejojaría la separación de los resultados.
+
+### Resultado
+
+![Gráfica 6](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Clustering%201.png)
+
+El cluster logra ser separado en 4 parte de manera muy limpia, teniendo como principal objetivo, separar los datos según el precios. En la vida real, esto nos ayudaría a encontrar los autos basandose en el precio y calidad.
 
 ## Clustering 2
 
-![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/M%C3%A9todo%20de%20la%20Silueta.png)
-![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Clustering%202.png)
+El segundo clustering de tipo K-Means vuelve a relacionar el año y el precio, pero ahora sin tener en cuenta el promedio. Esto nos ayuda a ver desde otra prespectiva la relación de estas dos caracteríticas. Nueva,ente, observamos como sí tiene gran relavancia el año de creación del auto con sus precios.
+
+### Método de la Silueta
+
+Para diferenciar el rendimiento del primer cluster, se prefirió utilizar el otro método aprendido. En este caso, una cantidad de 3 cluster termina siendo significativamente más apropiado que utilizar 4 o más.
+
+![Gráfica 7](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/M%C3%A9todo%20de%20la%20Silueta.png)
+
+### Resultado
+
+El cluster se ha encargado de no solo separar con respecto a los años, sino que, deja en claro esa relación que posee la vida util de un auto y su precio. Este otro tipo de búsqueda puede ser también muy importante en caso de querar buscar un auto de un año específico o un precio asequible.
+
+![Gráfica 8](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Clustering%202.png)
 
  
 
