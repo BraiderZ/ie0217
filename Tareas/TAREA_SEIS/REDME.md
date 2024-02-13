@@ -174,7 +174,37 @@ Cada verbo HTTP compone un papel fundamental a la hora de compartir información
 - PUT: actualizar datos.
 - DELETE: eliminar datos.
 
-De manera esta manera sencilla, se establece la acción a realizar a la hora de comunicar las aplicaciones. Cabe destacar que, el uso literal de verbos en inglés, también mejor la comprensión de lo que sucede en el proceso de solicutd y respuesta. 
+De manera esta manera sencilla, se establece la acción a realizar a la hora de comunicar las aplicaciones. Cabe destacar que, el uso literal de verbos en inglés, también mejor la comprensión de lo que sucede en el proceso de solicutd y respuesta.
+
+# Parte Práctica Análisis
+
+Una vez realizada toda la sección lógica del programa, resulta fructuoso valorar los resultados. Para ello, analizaremos brevemente cada gráfica y rendimiento.
+
+## Regresión Lineal y no Lineal 1
+
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20Lineal%201.png)
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20No%20Lineal%201.png)
+
+## Regresión Lineal y no Lineal 2
+
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20Lineal%202.png)
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Regresion%20No%20Lineal%202.png)
+
+## Redimiento de las Regresiones
+
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Rendimiento.png)
+
+## Clustering 1
+
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/M%C3%A9todo%20del%20Codo.png)
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Clustering%201.png)
+
+## Clustering 2
+
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/M%C3%A9todo%20de%20la%20Silueta.png)
+![Gráfica 1](https://github.com/BraiderZ/ie0217/blob/main/Tareas/TAREA_SEIS/imagenes/Clustering%202.png)
+
+ 
 
 # Blibiografía
 
